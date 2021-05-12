@@ -13,8 +13,13 @@ public class SettingsFrag extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_settings, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_settings, container, false);
+
+        return rootView;
     }
+
+
 }

@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         activity_password = new PasswordFrag(); //SearchAdapter 수정 필요함
         activity_web = new WebFrag();
-       activity_insert = new InsertFrag();
+        activity_insert = new InsertFrag();
         activity_setting = new SettingsFrag();
         setFrag(0); // 첫 프래그먼트 화면 지정
 

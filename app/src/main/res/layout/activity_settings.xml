@@ -26,7 +26,9 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- 테마 설정 -->
     <LinearLayout
+        android:id="@+id/linearTheme"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center_vertical"
@@ -54,7 +56,9 @@
 
     </LinearLayout>
 
+    <!-- 마스터 암호 설정 -->
     <LinearLayout
+        android:id="@+id/linearMaster"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center_vertical"
@@ -67,7 +71,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
-            android:text="마스터 암호 설정"
+            android:text="마스터 암호"
             android:textColor="@color/black"
             android:textSize="18sp" />
 
@@ -81,7 +85,9 @@
             android:text="처음 잠금 화면에서 나타나는 암호입니다." />
     </LinearLayout>
 
+    <!-- 이중 잠금 암호 설정 -->
     <LinearLayout
+        android:id="@+id/linearDoubleLock"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center_vertical"
@@ -94,7 +100,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
-            android:text="이중 잠금 암호 설정"
+            android:text="이중 잠금 암호"
             android:textColor="@color/black"
             android:textSize="18sp" />
 
@@ -108,7 +114,9 @@
             android:text="비밀번호를 볼 때 나타나는 암호를 설정합니다." />
     </LinearLayout>
 
+    <!-- 비밀번호 알림 -->
     <LinearLayout
+        android:id="@+id/linearNotice"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center_vertical"
@@ -134,5 +142,6 @@
             android:layout_marginBottom="5dp"
             android:text="비밀번호 변경 알림에 대해서 설정합니다." />
     </LinearLayout>
+
 
 </LinearLayout>

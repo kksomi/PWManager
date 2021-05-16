@@ -36,13 +36,14 @@
                 android:id="@+id/radioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="화이트 테마" />
+                android:checked="true"
+                android:text="라이트 모드" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="다크 테마" />
+                android:text="다크 모드" />
         </RadioGroup>
 
     </LinearLayout>

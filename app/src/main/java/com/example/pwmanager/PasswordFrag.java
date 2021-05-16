@@ -14,13 +14,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PasswordFrag extends Fragment {
 
     private RecyclerAdapter adapter;
     private RecyclerView recyclerView;
-    private List<String> list = new ArrayList<>();
+    private ArrayList<String> list = null;
 
 
 
@@ -28,29 +27,33 @@ public class PasswordFrag extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        settingList();
-        }
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.activity_password, container, false);
-
-
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-
-        recyclerView.setHasFixedSize(true);
-        adapter = new RecyclerAdapter(getActivity(), list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(adapter);
-
-        Log.e("Frag", "PasswordFrag");
-        return rootView;
-
-    }
-    void settingList(){
+        list = new ArrayList<String>();
         list.add("password");
         list.add("qlalfqjsgh");
         list.add("12345678");
         list.add("secretNumber");
-        list.add("pwmanager");
+        list.add("pass1234");
+        list.add("qwerasdf");
+
+        }
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.activity_password, container, false);
+
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+
+        LinearLayoutManager layoutManager1 = new LinearLayoutManager(recyclerView.getContext());
+
+        recyclerView.setHasFixedSize(true);
+        adapter = new RecyclerAdapter(getContext(),list);
+        recyclerView.setLayoutManager(layoutManager1);
+        recyclerView.setAdapter(adapter);
+
+
+        PasswordAdapter passAdapter = new PasswordAdapter();
+
+        Log.e("Frag", "PasswordFrag");
+        return rootView;
+
     }
 
 

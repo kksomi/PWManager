@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder> {
+public class WebAdapter extends RecyclerView.Adapter<WebAdapter.ItemViewHolder> {
     // adapter에 들어갈 list 입니다.
 
     private ArrayList<String> list = new ArrayList<String>();
     private Context context;
 
-    public RecyclerAdapter(Context context,ArrayList<String> list) {
+    public WebAdapter(Context context, ArrayList<String> list) {
         this.context = context;
         this.list = list;
     }
@@ -42,7 +42,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
             });
 
             // 뷰 객체에 대한 참조. (hold strong reference)
-            textView1 = itemView.findViewById(R.id.password) ;
+            textView1 = itemView.findViewById(R.id.web) ;
         }
     }
 
@@ -59,9 +59,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         //return new ItemViewHolder(view);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) ;
 
-
-        View view = inflater.inflate(R.layout.row_listview, parent, false) ;
-        RecyclerAdapter.ItemViewHolder vh = new RecyclerAdapter.ItemViewHolder(view) ;
+        View view = inflater.inflate(R.layout.row_web, parent, false) ;
+        ItemViewHolder vh = new ItemViewHolder(view) ;
 
         return vh ;
 
@@ -87,7 +86,5 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 
 
 
-
 }
-
 

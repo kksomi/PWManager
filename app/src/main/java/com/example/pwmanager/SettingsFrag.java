@@ -49,15 +49,6 @@ public class SettingsFrag extends Fragment {
             }
         });
 
-        linearMaster = rootView.findViewById(R.id.linearDoubleLock);
-        linearMaster.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SettingDoubleLockActivity.class);
-                startActivity(intent);
-            }
-        });
-
         linearMaster = rootView.findViewById(R.id.linearNotice);
         linearMaster.setOnClickListener(new View.OnClickListener() {
             @Override

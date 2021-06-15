@@ -36,6 +36,7 @@ public class WebAdapter extends RecyclerView.Adapter<WebAdapter.ItemViewHolder> 
                     if (pos != RecyclerView.NO_POSITION) {
                         Intent intent = new Intent(context, PassInfo.class);
                         intent.putExtra("TEXT",list.get(pos));
+                        intent.putExtra("num",(int)2);
                         context.startActivity(intent);
                     }
                 }

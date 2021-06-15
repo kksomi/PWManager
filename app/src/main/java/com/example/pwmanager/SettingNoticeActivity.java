@@ -1,7 +1,5 @@
 package com.example.pwmanager;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +7,8 @@ import android.widget.CheckBox;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SettingNoticeActivity extends AppCompatActivity {
 
@@ -36,7 +36,7 @@ public class SettingNoticeActivity extends AppCompatActivity {
         chkAgree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(chkAgree.isChecked()) {
+                if (chkAgree.isChecked()) {
                     txt1.setEnabled(true);
                     txt2.setEnabled(true);
                     cb1.setEnabled(true);

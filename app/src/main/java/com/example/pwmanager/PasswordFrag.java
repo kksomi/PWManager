@@ -49,8 +49,6 @@ public class PasswordFrag extends Fragment {
         recyclerView.setAdapter(adapter);
 
 
-        PasswordAdapter passAdapter = new PasswordAdapter();
-
         Log.e("Frag", "PasswordFrag");
         return rootView;
 

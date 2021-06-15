@@ -3,11 +3,9 @@ package com.example.pwmanager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -47,19 +45,19 @@ public class passinfoAdapter extends RecyclerView.Adapter<passinfoAdapter.ItemVi
     // 여기서 subView를 setting 해줍니다.
     class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView textView1;
-        private TextView textView2;
+        private TextView title;
+        private TextView content;
 
         ItemViewHolder(View itemView) {
             super(itemView);
 
-            textView1 = itemView.findViewById(R.id.textView1);
-            textView2 = itemView.findViewById(R.id.textView2);
+            title = itemView.findViewById(R.id.title);
+            content = itemView.findViewById(R.id.content);
         }
 
         void onBind(Data data) {
-            textView1.setText(data.getTitle());
-            textView2.setText(data.getContent());
+            title.setText(data.getTitle());
+            content.setText(data.getContent());
         }
     }
 }

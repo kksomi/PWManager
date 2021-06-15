@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        activity_password = new PasswordFrag(); //SearchAdapter 수정 필요함
+        activity_password = new PasswordFrag();
         activity_web = new WebFrag();
         activity_insert = new InsertFrag();
         activity_setting = new SettingsFrag();

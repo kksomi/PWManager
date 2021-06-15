@@ -18,35 +18,34 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
     private ArrayList<String> list = new ArrayList<String>();
     private Context context;
 
-    public RecyclerAdapter(Context context,ArrayList<String> list) {
+    public RecyclerAdapter(Context context, ArrayList<String> list) {
         this.context = context;
         this.list = list;
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
-        TextView textView1 ;
+        TextView textView1;
 
         ItemViewHolder(View itemView) {
-            super(itemView) ;
+            super(itemView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int pos = getAdapterPosition() ;
+                    int pos = getAdapterPosition();
                     if (pos != RecyclerView.NO_POSITION) {
                         Intent intent = new Intent(context, PassInfo.class);
-                        intent.putExtra("TEXT",list.get(pos));
+                        intent.putExtra("TEXT", list.get(pos));
+                        intent.putExtra("num",(int)1);
                         context.startActivity(intent);
                     }
                 }
             });
 
             // 뷰 객체에 대한 참조. (hold strong reference)
-            textView1 = itemView.findViewById(R.id.password) ;
+            textView1 = itemView.findViewById(R.id.password);
         }
     }
-
-
 
 
     @NonNull
@@ -57,13 +56,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         Context context = parent.getContext();
         //View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_listview, parent, false);
         //return new ItemViewHolder(view);
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) ;
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 
-        View view = inflater.inflate(R.layout.row_listview, parent, false) ;
-        RecyclerAdapter.ItemViewHolder vh = new RecyclerAdapter.ItemViewHolder(view) ;
+        View view = inflater.inflate(R.layout.row_listview, parent, false);
+        RecyclerAdapter.ItemViewHolder vh = new RecyclerAdapter.ItemViewHolder(view);
 
-        return vh ;
+        return vh;
 
     }
 
@@ -84,8 +83,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         // RecyclerView의 총 개수 입니다.
         return list.size();
     }
-
-
 
 
 }

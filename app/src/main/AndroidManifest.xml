@@ -17,7 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".SettingNoticeActivity" />
-        <activity android:name=".SettingDoubleLockActivity" />
         <activity android:name=".SettingThemeActivity" />
         <activity android:name=".SettingMasterActivity" />
         <activity android:name=".PopUpActivity" />

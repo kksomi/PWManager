@@ -1,5 +1,6 @@
 package com.example.pwmanager;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -84,7 +85,4 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         return list.size();
     }
 
-
 }
-
-

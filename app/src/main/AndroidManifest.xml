@@ -19,7 +19,6 @@
         <activity android:name=".SettingNoticeActivity" />
         <activity android:name=".SettingThemeActivity" />
         <activity android:name=".SettingMasterActivity" />
-        <activity android:name=".PopUpActivity" />
         <activity android:name=".PassInfo"></activity>
         <activity android:name=".MainActivity">
         </activity>

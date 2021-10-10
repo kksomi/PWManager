@@ -1,4 +1,4 @@
-package com.example.pwmanager;
+package com.example.pwmanager.ui.setting;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.pwmanager.R;
 
 public class SettingsFrag extends Fragment {
     LinearLayout linearTheme;

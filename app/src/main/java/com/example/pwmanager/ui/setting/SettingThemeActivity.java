@@ -1,11 +1,13 @@
-package com.example.pwmanager;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.pwmanager.ui.setting;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pwmanager.R;
 
 public class SettingThemeActivity extends AppCompatActivity {
 

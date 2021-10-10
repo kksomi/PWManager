@@ -1,4 +1,4 @@
-package com.example.pwmanager;
+package com.example.pwmanager.ui.setting;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pwmanager.R;
 
 public class SettingNoticeActivity extends AppCompatActivity {
 

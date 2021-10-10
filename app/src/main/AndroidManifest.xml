@@ -16,10 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingNoticeActivity" />
-        <activity android:name=".SettingThemeActivity" />
-        <activity android:name=".SettingMasterActivity" />
-        <activity android:name=".PassInfo"></activity>
+        <activity android:name=".ui.setting.SettingNoticeActivity" />
+        <activity android:name=".ui.setting.SettingThemeActivity" />
+        <activity android:name=".ui.setting.SettingMasterActivity" />
         <activity android:name=".MainActivity">
         </activity>
     </application>

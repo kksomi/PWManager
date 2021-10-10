@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SettingNoticeActivity">
+    tools:context=".ui.setting.SettingNoticeActivity">
 
     <!-- 비밀번호 알림 설정 -->
     <LinearLayout

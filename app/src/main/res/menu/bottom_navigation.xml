@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--resource type을 menu로 선택 후 생성-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <!--    <item-->
 <!--        android:id="@+id/action_password"-->
@@ -6,6 +7,7 @@
 <!--        android:icon="@drawable/ic_baseline_format_list_bulleted_24"-->
 <!--        android:title="비밀번호"/>-->
 
+    <!--메뉴 하단 바 아이템 생성-->
     <item
         android:id="@+id/navigation_list"
         android:enabled="true"

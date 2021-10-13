@@ -3,6 +3,7 @@
     package="com.example.pwmanager">
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,6 +22,7 @@
         <activity android:name=".ui.setting.SettingMasterActivity" />
         <activity android:name=".MainActivity">
         </activity>
+        <meta-data android:name="android.max_aspect" android:value="2.1" />
     </application>
 
 </manifest>

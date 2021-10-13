@@ -108,7 +108,7 @@
                         android:id="@+id/input_url"
                         android:layout_width="0px"
                         android:layout_height="match_parent"
-                        android:layout_weight="4"
+                        android:layout_weight="3.5"
                         android:hint="URL"
                         android:inputType="textUri" />
 
@@ -139,7 +139,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="0px"
                         android:layout_height="match_parent"
-                        android:layout_weight="4"
+                        android:layout_weight="3.5"
                         android:background="#FFFFFF"
                         app:boxBackgroundColor="#FFFFFF"
                         app:passwordToggleEnabled="true">
@@ -173,7 +173,7 @@
                         android:id="@+id/userPush"
                         android:layout_width="0px"
                         android:layout_height="match_parent"
-                        android:layout_weight="4"
+                        android:layout_weight="3.5"
                         android:hint="Push"
                         android:inputType="textPersonName" />
 

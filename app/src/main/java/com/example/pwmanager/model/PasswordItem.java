@@ -1,5 +1,6 @@
 package com.example.pwmanager.model;
 
+//비밀번호 정보 클래스
 public class PasswordItem {
     private String name;
     private String url;
@@ -7,6 +8,7 @@ public class PasswordItem {
     private String encryptPassword;
     private boolean push;
     private String memo;
+    private String date; //날짜
 
     public String getName() {
         return name;
@@ -56,6 +58,14 @@ public class PasswordItem {
         this.memo = memo;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
         return "PasswordItem{" +
@@ -65,6 +75,7 @@ public class PasswordItem {
                 ", encryptPassword='" + encryptPassword + '\'' +
                 ", push=" + push +
                 ", memo='" + memo + '\'' +
+                ", Date='" + date + '\'' +
                 '}';
     }
 }

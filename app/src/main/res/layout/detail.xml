@@ -27,47 +27,54 @@
             <LinearLayout
                 android:layout_width="82dp"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="10">
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:text="이름" />
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:text="URL" />
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:text="아이디" />
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:text="비밀번호" />
 
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:text="알림" />
 
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="5"
                     android:gravity="center|center_horizontal"
                     android:text="메모" />
             </LinearLayout>
@@ -76,85 +83,80 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="10">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_name"
+                <TextView
+                    android:id="@+id/view_name"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
                     android:ems="10"
-                    android:hint="Name"
-                    android:inputType="textPersonName" />
+                    android:hint=""
+                    android:inputType="textPersonName"
+                    android:gravity="center_vertical"
+                    android:textIsSelectable="true" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/input_url"
-                        android:layout_width="263dp"
-                        android:layout_height="50dp"
-                        android:hint="URL"
-                        android:inputType="textUri" />
+                    <TextView
+                        android:id="@+id/view_url"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint=""
+                        android:inputType="textUri"
+                        android:gravity="center_vertical"
+                        android:textIsSelectable="true" />
 
-                    <Button
-                        android:id="@+id/button2"
-                        android:layout_width="65dp"
-                        android:layout_height="wrap_content"
-                        android:text="검색"
-                        app:backgroundTint="#858585" />
                 </LinearLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_id"
+                <TextView
+                    android:id="@+id/view_id"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
                     android:ems="10"
-                    android:hint="Id"
-                    android:inputType="text" />
+                    android:hint=""
+                    android:inputType="text"
+                    android:gravity="center_vertical"
+                    android:textIsSelectable="true" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="263dp"
-                        android:layout_height="match_parent"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0px"
+                        android:layout_weight="1"
                         android:background="#FFFFFF"
-                        app:boxBackgroundColor="#FFFFFF"
-                        app:passwordToggleEnabled="true">
+                        app:boxBackgroundColor="#FFFFFF">
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/input_pw"
-                            android:layout_width="263dp"
+                        <TextView
+                            android:id="@+id/view_pw"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:hint="Password"
-                            android:inputType="textPassword" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:gravity="center_vertical"
+                            android:hint="비밀번호 확인하기"
+                            android:clickable="true"
+                            android:inputType="text"
+                            android:textIsSelectable="true" />
+                    </LinearLayout>
 
-                    <Button
-                        android:id="@+id/button4"
-                        android:layout_width="65dp"
-                        android:layout_height="match_parent"
-                        android:text="생성"
-                        app:backgroundTint="#858585" />
-
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/userPush"
+                    <TextView
+                        android:id="@+id/view_userPush"
                         android:layout_width="263dp"
-                        android:layout_height="50dp"
-                        android:hint="Push"
-                        android:inputType="textPersonName" />
+                        android:layout_height="match_parent"
+                        android:hint=""
+                        android:gravity="center_vertical"
+                        android:inputType="text" />
 
                     <Button
                         android:id="@+id/button5"
@@ -162,16 +164,20 @@
                         android:layout_height="wrap_content"
                         android:text="선택"
                         app:backgroundTint="#858585" />
+
                 </LinearLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_memo"
+                <TextView
+                    android:id="@+id/view_memo"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="5"
                     android:ems="10"
-                    android:hint="Memo"
+                    android:hint=""
                     android:inputType="textMultiLine"
-                    android:lines="5" />
+                    android:lines="5"
+                    android:gravity="center_vertical"
+                    android:textIsSelectable="true" />
 
             </LinearLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -180,16 +186,29 @@
             android:layout_width="match_parent"
             android:layout_height="0px"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/input_button"
+                android:id="@+id/change_button"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:backgroundTint="#B1AEAE"
-                android:text="저장"
+                android:text="수정"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:backgroundTint="#B1AEAE"
+                app:iconTint="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/delete_button"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#B1AEAE"
+                android:text="삭제"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:backgroundTint="#B1AEAE"

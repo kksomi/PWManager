@@ -26,17 +26,22 @@ public class ListFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         viewModel =
                 new ViewModelProvider(getActivity()).get(ListViewModel.class);
+        //fragment_list.xml 화면 불러오기
         View root = inflater.inflate(R.layout.fragment_list, container, false);
 
+        //어답터 생성 및 리사이클러뷰와 연결
         adapter = new CustomAdapter();
         recyclerView = root.findViewById(R.id.list_rcview);
         recyclerView.setAdapter(adapter);
+
+        //item 클릭 시 DetailFragment 로 화면 전환
         adapter.setOnItemClickListener(item -> {
             viewModel.getSelectItem().setValue(item);
             Fragment f = new DetailFragment();
             getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, f).commit();
         });
 
+        //비밀번호 정보를 연결
         viewModel.getPasswordList().observe(getViewLifecycleOwner(), passwordItems -> {
             adapter.setItems(passwordItems);
         });

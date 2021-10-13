@@ -12,6 +12,7 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
+//암호화 클래스
 public class CipherUtils {
     static String iv = "ca4cb565b6b04229";
     static IvParameterSpec ivParamSpec = new IvParameterSpec(iv.getBytes());

@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+//저장 클래스
 public class StoreUtils {
     SharedPreferences sharedPreferences;
     private static final String DELIM = "_@=DELIM@=_";
@@ -41,7 +42,8 @@ public class StoreUtils {
             String id = item.getId();
             String password = item.getEncryptPassword();
             String memo = item.getMemo();
-            String result = name + DELIM + url + DELIM + id + DELIM + password + DELIM + memo;
+            String date = item.getDate();
+            String result = name + DELIM + url + DELIM + id + DELIM + password + DELIM + memo + DELIM + date;
             String base64data = Base64.encodeToString(result.getBytes(), Base64.DEFAULT);
             set.add(base64data);
         }
@@ -60,6 +62,7 @@ public class StoreUtils {
             item.setId(ss[2]);
             item.setEncryptPassword(ss[3]);
             item.setMemo(ss[4]);
+            item.setDate(ss[5]);
             items.add(item);
         }
         return items;

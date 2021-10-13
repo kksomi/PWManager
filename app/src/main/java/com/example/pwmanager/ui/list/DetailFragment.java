@@ -4,8 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -13,18 +12,18 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.pwmanager.Application;
 import com.example.pwmanager.CipherUtils;
 import com.example.pwmanager.R;
-import com.google.android.material.textfield.TextInputEditText;
 
 public class DetailFragment extends Fragment {
 
     private ListViewModel viewModel;
 
-    private TextInputEditText nameText;
-    private TextInputEditText idText;
-    private TextInputEditText urlText;
-    private TextInputEditText pwText;
-    private TextInputEditText memoText;
-    private Button btn;
+    private TextView nameText;
+    private TextView idText;
+    private TextView urlText;
+    private TextView pwText;
+    private TextView memoText;
+    private String pw;
+    private TextView dateText;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,37 +31,48 @@ public class DetailFragment extends Fragment {
 
         viewModel = new ViewModelProvider(getActivity()).get(ListViewModel.class);
 
-        View root = inflater.inflate(R.layout.activity_insert, container, false);
-        nameText = root.findViewById(R.id.input_name);
-        idText = root.findViewById(R.id.input_id);
-        urlText = root.findViewById(R.id.input_url);
-        pwText = root.findViewById(R.id.input_pw);
-        memoText = root.findViewById(R.id.input_memo);
-        btn = root.findViewById(R.id.input_button);
-        btn.setVisibility(View.GONE);
+        //detail.xml 화면 불러오기 및 변수 설정
+        View view = inflater.inflate(R.layout.detail, container, false);
+        nameText = view.findViewById(R.id.view_name);
+        idText = view.findViewById(R.id.view_id);
+        urlText = view.findViewById(R.id.view_url);
+        pwText = view.findViewById(R.id.view_pw);
+        memoText = view.findViewById(R.id.view_memo);
+        dateText = view.findViewById(R.id.view_userPush);
 
-        nameText.setEnabled(false);
-        idText.setEnabled(false);
-        urlText.setEnabled(false);
-        pwText.setEnabled(false);
-        memoText.setEnabled(false);
+        TextView textView = (TextView) view.findViewById(R.id.view_pw);
 
+        nameText.setEnabled(true);
+        idText.setEnabled(true);
+        urlText.setEnabled(true);
+        pwText.setEnabled(true);
+        memoText.setEnabled(true);
+        dateText.setEnabled(true);
+
+        //선택한 비밀번호 정보 불러오기
         viewModel.getSelectItem().observe(getViewLifecycleOwner(), item -> {
-            if(item!=null) {
-                nameText.setText(item.getName());
-                idText.setText(item.getId());
-                urlText.setText(item.getUrl());
-                pwText.setText(item.getEncryptPassword());
-                memoText.setText(item.getMemo());
+            if (item != null) {
 
+                //CipherUtils 에서 암호화된 비밀번호를 복호화하여 pw에 저장
                 try {
                     String plainPw = CipherUtils.decrypt(item.getEncryptPassword(), Application.getMasterKey());
-                    Toast.makeText(getContext(), "비밀번호="+plainPw, Toast.LENGTH_SHORT).show();
+                    pw = plainPw;
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+                //불러온 비밀번호 정보를 변수에 저장
+                nameText.setText(item.getName());
+                idText.setText(item.getId());
+                urlText.setText(item.getUrl());
+                memoText.setText(item.getMemo());
+                dateText.setText(item.getDate());
             }
         });
-        return root;
+
+        //비밀번호 정보는 textView 클릭시 나타남
+       textView.setOnClickListener(v -> pwText.setText(pw));
+
+        return view;
     }
 }

@@ -55,7 +55,7 @@ public class AddFragment extends Fragment {
             String memo;
             String pwPlainText;
             String pw = null;
-            String date = getTime(); //날짜
+            String date = "마지막 변경일 : " + getTime(); //날짜
 
             //변수에서 텍스트를 문자열로 변환
             //입력이 없으면 공백으로 채움

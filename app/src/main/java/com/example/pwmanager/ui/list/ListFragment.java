@@ -38,7 +38,7 @@ public class ListFragment extends Fragment {
         adapter.setOnItemClickListener(item -> {
             viewModel.getSelectItem().setValue(item);
             Fragment f = new DetailFragment();
-            getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, f).commit();
+            getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, f).addToBackStack(null).commit();
         });
 
         //비밀번호 정보를 연결

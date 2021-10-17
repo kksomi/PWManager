@@ -71,7 +71,7 @@ public class DetailFragment extends Fragment {
         });
 
         //비밀번호 정보는 textView 클릭시 나타남
-       textView.setOnClickListener(v -> pwText.setText(pw));
+        textView.setOnClickListener(v -> pwText.setText(pw));
 
         return view;
     }

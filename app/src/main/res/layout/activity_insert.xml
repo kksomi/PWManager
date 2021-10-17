@@ -169,16 +169,14 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/userPush"
+                    <TextView
+                        android:id="@+id/input_push"
                         android:layout_width="0px"
                         android:layout_height="match_parent"
-                        android:layout_weight="3.5"
-                        android:hint="Push"
-                        android:inputType="textPersonName" />
+                        android:layout_weight="3.5" />
 
                     <Button
-                        android:id="@+id/button5"
+                        android:id="@+id/btn_selectPush"
                         android:layout_width="0px"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

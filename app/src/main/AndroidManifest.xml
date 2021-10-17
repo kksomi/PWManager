@@ -13,7 +13,6 @@
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -21,6 +20,7 @@
         <activity android:name=".ui.setting.SettingThemeActivity" />
         <activity android:name=".ui.setting.SettingMasterActivity" />
         <activity android:name=".MainActivity">
+            android:windowSoftInputMode="adjustResize|adjustPan">
         </activity>
         <meta-data android:name="android.max_aspect" android:value="2.1" />
     </application>

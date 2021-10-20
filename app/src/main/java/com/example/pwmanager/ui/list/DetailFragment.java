@@ -28,7 +28,11 @@ public class DetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        // viewmodel 객체 생성
+        // 첫 번째 매개변수 -> 모든 fragment들이 속한 부모 activity
+        // -> 그러면 각 프레그먼트는 동일한 SharedViewModel 인스턴스를 얻게 된다.
+        // SharedViewModel의 생명주기는 Activity를 따르게 되고, Fragment의 생명주기는 Activity의 서브셋이므로 Fragment의 생명주기 동안에 자유롭게 데이터를 공유
+        // viewmodel역할을 하는 클래스와 ui컨트롤러 클래스 연결
         viewModel = new ViewModelProvider(getActivity()).get(ListViewModel.class);
 
         //detail.xml 화면 불러오기 및 변수 설정
@@ -75,5 +79,4 @@ public class DetailFragment extends Fragment {
 
         return view;
     }
-
 }

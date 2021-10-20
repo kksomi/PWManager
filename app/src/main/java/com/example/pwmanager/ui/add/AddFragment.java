@@ -53,7 +53,7 @@ public class AddFragment extends Fragment {
             String id;
             String url;
             String memo;
-            String pwPlainText;
+            String pwPlainText; // 순수
             String pw = null;
             String date = "마지막 변경일 : " + getTime(); //날짜
 
@@ -88,6 +88,7 @@ public class AddFragment extends Fragment {
 
             //PasswordItem 객체 생성 및 저장된 내용 추가
             PasswordItem item = new PasswordItem();
+
             item.setName(name);
             item.setId(id);
             item.setUrl(url);

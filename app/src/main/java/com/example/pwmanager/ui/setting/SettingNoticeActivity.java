@@ -12,7 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pwmanager.R;
 
-public class SettingNoticeActivity extends AppCompatActivity {
+public class
+SettingNoticeActivity extends AppCompatActivity {
 
     Switch chkAgree;
     TextView txt1, txt2;

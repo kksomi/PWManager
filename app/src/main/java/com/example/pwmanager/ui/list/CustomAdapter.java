@@ -17,12 +17,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private ArrayList<PasswordItem> items;
     private OnItemClickListener onItemClickListener;
 
+    // 아이템을 가지고 있는 역할
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView nameText;
         private final TextView urlText;
 
+
         public ViewHolder(View view) {
-            super(view);
+            super(view); // 슈퍼를 이용해 view 생성
             nameText = (TextView) view.findViewById(R.id.item_name);
             urlText = (TextView) view.findViewById(R.id.item_url);
         }

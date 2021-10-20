@@ -34,6 +34,13 @@ public class StoreUtils {
         updateItems(items);
     }
 
+    public void readdItem(PasswordItem item1, PasswordItem item2) {
+        ArrayList<PasswordItem> items = getItems();
+        int index = items.indexOf(item1);
+        items.set(index,item2);
+
+    }
+
     public void updateItems(Collection<PasswordItem> items) {
         Set<String> set = new HashSet<>();
         for(PasswordItem item : items) {

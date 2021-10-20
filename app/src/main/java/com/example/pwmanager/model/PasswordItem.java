@@ -2,6 +2,12 @@ package com.example.pwmanager.model;
 
 //비밀번호 정보 클래스
 public class PasswordItem {
+
+    public PasswordItem() {
+        this.pwId++;
+    }
+
+    private int pwId=0;
     private String name;
     private String url;
     private String id;
@@ -9,6 +15,10 @@ public class PasswordItem {
     private boolean push;
     private String memo;
     private String date; //날짜
+
+    public int getPwId() {
+        return pwId;
+    }
 
     public String getName() {
         return name;
@@ -66,9 +76,21 @@ public class PasswordItem {
         this.date = date;
     }
 
+    // 업데이트 시 name을 통해 passworditem검색 필요
+//    @Override public boolean equals(Object obj) {
+//        PasswordItem other = (PasswordItem)obj;
+//        if (other == null) return false;
+//
+//        boolean result = name != null && name.length() > 0;
+//        result = result && name.equals(other.name);
+//        return result;
+//    }
+
+
     @Override
     public String toString() {
         return "PasswordItem{" +
+                "pwId'" + pwId + '\'' +
                 "name='" + name + '\'' +
                 ", url='" + url + '\'' +
                 ", id='" + id + '\'' +

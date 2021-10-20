@@ -41,7 +41,8 @@ public class ListFragment extends Fragment {
             getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, f).addToBackStack(null).commit();
         });
 
-        //비밀번호 정보를 연결
+        //전체 비밀번호 정보리스트를 연결
+        //livedata가 제공하는 observe()메소드를 사용 -> 뷰모델의 데이터 값이 바뀌면 안의 람다식 실행
         viewModel.getPasswordList().observe(getViewLifecycleOwner(), passwordItems -> {
             adapter.setItems(passwordItems);
         });

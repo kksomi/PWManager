@@ -26,6 +26,7 @@ String themeColor;
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+        // 기기에 저장된 테마 모드 값을 불러와 테마 설정
         themeColor = ThemeUtil.modLoad(getApplicationContext());
         ThemeUtil.applyTheme(themeColor);
     }

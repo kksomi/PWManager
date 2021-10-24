@@ -22,7 +22,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:text="테마 설정"
-            android:textColor="@color/black"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="18sp" />
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:text="마스터 암호"
-            android:textColor="@color/black"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="18sp" />
 
         <TextView
@@ -81,7 +81,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:text="비밀번호 알림"
-            android:textColor="@color/black"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="18sp" />
 
         <TextView

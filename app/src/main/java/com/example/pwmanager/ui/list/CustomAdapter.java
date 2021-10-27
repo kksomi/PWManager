@@ -95,8 +95,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         this.onItemClickListener = onItemClickListener;
     }
 
-//    @Override
-//    public boolean onItemMove(int from_position, int to_position) {
+    @Override
+    public boolean onItemMove(int from_position, int to_position) {
 //        PasswordItem number = items.get(from_position);
 //        items.remove(from_position);
 //        items.add(to_position, number);
@@ -104,10 +104,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 //        new StoreUtils(context).updateItems(items);
 //
 //        notifyItemMoved(from_position, to_position);
-//
-//        return true;
-//
-//    }
+
+        return true;
+
+    }
 
     //아이템 삭제
     @Override

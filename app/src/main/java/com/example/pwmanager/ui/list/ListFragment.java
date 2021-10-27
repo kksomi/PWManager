@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pwmanager.R;
@@ -21,6 +22,7 @@ public class ListFragment extends Fragment {
     private ListViewModel viewModel;
     private RecyclerView recyclerView;
     private CustomAdapter adapter;
+    private ItemTouchHelper helper;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -34,12 +36,16 @@ public class ListFragment extends Fragment {
         recyclerView = root.findViewById(R.id.list_rcview);
         recyclerView.setAdapter(adapter);
 
+        helper = new ItemTouchHelper(new ItemTouchHelperCallback(adapter));
+        helper.attachToRecyclerView(recyclerView);
+
         //item 클릭 시 DetailFragment 로 화면 전환
         adapter.setOnItemClickListener(item -> {
             viewModel.getSelectItem().setValue(item);
             Fragment f = new DetailFragment();
             getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, f).addToBackStack(null).commit();
         });
+
 
         //전체 비밀번호 정보리스트를 연결
         //livedata가 제공하는 observe()메소드를 사용 -> 뷰모델의 데이터 값이 바뀌면 안의 람다식 실행

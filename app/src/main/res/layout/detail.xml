@@ -20,7 +20,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="9"
+            android:layout_weight="10"
             android:orientation="horizontal">
 
 
@@ -92,9 +92,9 @@
                     android:layout_height="0px"
                     android:layout_weight="1"
                     android:ems="10"
+                    android:gravity="center_vertical"
                     android:hint=""
                     android:inputType="textPersonName"
-                    android:gravity="center_vertical"
                     android:textIsSelectable="true" />
 
                 <LinearLayout
@@ -107,9 +107,9 @@
                         android:id="@+id/view_url"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:gravity="center_vertical"
                         android:hint=""
                         android:inputType="textUri"
-                        android:gravity="center_vertical"
                         android:textIsSelectable="true" />
 
                 </LinearLayout>
@@ -120,9 +120,9 @@
                     android:layout_height="0px"
                     android:layout_weight="1"
                     android:ems="10"
+                    android:gravity="center_vertical"
                     android:hint=""
                     android:inputType="text"
-                    android:gravity="center_vertical"
                     android:textIsSelectable="true" />
 
                 <LinearLayout
@@ -136,9 +136,9 @@
                         android:id="@+id/view_pw"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:clickable="true"
                         android:gravity="center_vertical"
                         android:hint="비밀번호 확인하기"
-                        android:clickable="true"
                         android:inputType="text"
                         android:textIsSelectable="true" />
                 </LinearLayout>
@@ -200,46 +200,7 @@
             </LinearLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0px"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/change_button"
-                style="@style/Widget.AppCompat.Button"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#B1AEAE"
-                android:text="수정"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:backgroundTint="#B1AEAE"
-                app:iconTint="@color/white" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/delete_button"
-                style="@style/Widget.AppCompat.Button"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#B1AEAE"
-                android:text="삭제"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:backgroundTint="#B1AEAE"
-                app:iconTint="@color/white" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
-        android:orientation="vertical"></LinearLayout>
-
-
-</LinearLayout>

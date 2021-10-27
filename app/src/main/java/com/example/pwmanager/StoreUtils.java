@@ -29,9 +29,18 @@ public class StoreUtils {
     }
 
     public void addItem(PasswordItem item) {
+
+        //비밀번호 객체 생성
         ArrayList<PasswordItem> items = getItems();
+        //전달받은 비밀번호 정보 추가
         items.add(item);
+        //추가한 정보를 base64 형태로 sharedpreferences에 한줄로 저장
         updateItems(items);
+    }
+
+    public void removeItem(PasswordItem items) {
+
+        sharedPreferences.edit().remove(items.getDate()).commit();
     }
 
     public void readdItem(PasswordItem item1, PasswordItem item2) {
@@ -43,17 +52,20 @@ public class StoreUtils {
 
     public void updateItems(Collection<PasswordItem> items) {
         Set<String> set = new HashSet<>();
+
         for(PasswordItem item : items) {
             String name = item.getName();
             String url = item.getUrl();
             String id = item.getId();
             String password = item.getEncryptPassword();
             String memo = item.getMemo();
+//            item.setDate(storeDate);
             String date = item.getDate();
             String result = name + DELIM + url + DELIM + id + DELIM + password + DELIM + memo + DELIM + date;
             String base64data = Base64.encodeToString(result.getBytes(), Base64.DEFAULT);
             set.add(base64data);
         }
+
         sharedPreferences.edit().putStringSet("passwords", set).commit();
     }
 

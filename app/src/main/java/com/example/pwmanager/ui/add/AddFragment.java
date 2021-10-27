@@ -55,7 +55,7 @@ public class AddFragment extends Fragment {
             String memo;
             String pwPlainText; // 순수
             String pw = null;
-            String date = "마지막 변경일 : " + getTime(); //날짜
+            String date = getTime(); //날짜
 
             //변수에서 텍스트를 문자열로 변환
             //입력이 없으면 공백으로 채움
@@ -117,13 +117,14 @@ public class AddFragment extends Fragment {
         //StoreUtils 객체 생성 및 전달 받은 PasswordItem 객체 저장 후 메시지 출력
         new StoreUtils(getContext()).addItem(item);
         Toast.makeText(getContext(), "저장되었습니다.", Toast.LENGTH_SHORT).show();
+
     }
 
     //현재 시간 불러오는 함수
     private String getTime(){
         long now = System.currentTimeMillis();
         Date date = new Date(now);
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         return format.format(date);
     }
 }

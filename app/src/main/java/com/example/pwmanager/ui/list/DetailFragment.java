@@ -13,6 +13,10 @@ import com.example.pwmanager.Application;
 import com.example.pwmanager.CipherUtils;
 import com.example.pwmanager.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class DetailFragment extends Fragment {
 
     private ListViewModel viewModel;
@@ -55,6 +59,17 @@ public class DetailFragment extends Fragment {
 
         //선택한 비밀번호 정보 불러오기
         viewModel.getSelectItem().observe(getViewLifecycleOwner(), item -> {
+            String date;
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            SimpleDateFormat newFormat = new SimpleDateFormat("yyyy-MM-dd");
+            Date dt = null;
+            try {
+                dt = format.parse(item.getDate());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            date = newFormat.format(dt);
+
             if (item != null) {
 
                 //CipherUtils 에서 암호화된 비밀번호를 복호화하여 pw에 저장
@@ -70,7 +85,8 @@ public class DetailFragment extends Fragment {
                 idText.setText(item.getId());
                 urlText.setText(item.getUrl());
                 memoText.setText(item.getMemo());
-                dateText.setText(item.getDate());
+                dateText.setText(date);
+
             }
         });
 

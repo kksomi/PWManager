@@ -22,7 +22,7 @@
         <activity android:name=".ui.setting.SettingMasterActivity" />
         <activity android:name=".MainActivity"
             android:windowSoftInputMode="adjustResize|adjustPan">
-        </activity>x
+        </activity>
         <activity android:name=".ui.setting.SettingThemeActivity"/>
 
 

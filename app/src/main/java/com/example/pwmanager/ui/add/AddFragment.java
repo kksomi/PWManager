@@ -49,33 +49,28 @@ public class AddFragment extends Fragment {
 
         //버튼 클릭 이벤트
         btn.setOnClickListener(v -> {
-            String name;
-            String id;
-            String url;
-            String memo;
-            String pwPlainText; // 순수
             String pw = null;
             String date = getTime(); //날짜
 
             //변수에서 텍스트를 문자열로 변환
             //입력이 없으면 공백으로 채움
-            name = nameText.getText().toString();
+            String name = nameText.getText().toString();
             if(name.length()<=0){
                 name=" ";
             }
-            id = idText.getText().toString();
+            String id = idText.getText().toString();
             if(id.length()<=0){
                 id=" ";
             }
-            url = urlText.getText().toString();
+            String url = urlText.getText().toString();
             if(url.length()<=0){
                 url=" ";
             }
-            memo = memoText.getText().toString();
+            String memo = memoText.getText().toString();
             if(memo.length()<=0){
                 memo=" ";
             }
-            pwPlainText = pwText.getText().toString();
+            String pwPlainText = pwText.getText().toString();
             if(pwPlainText.length()<=0){
                 pwPlainText=" ";
             }

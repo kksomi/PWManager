@@ -1,5 +1,6 @@
 package com.example.pwmanager.ui.list;
 
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,5 +61,15 @@ public class ListFragment extends Fragment {
         ArrayList<PasswordItem> data = new StoreUtils(getContext()).getItems();
         viewModel.getPasswordList().setValue(data);
         super.onResume();
+    }
+
+    private void setUpRecyclerView() {
+        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void onDraw(@NonNull Canvas c,@NonNull RecyclerView parent,
+                               @NonNull RecyclerView.State state) {
+                helper.onDraw(c, parent, state);
+            }
+        });
     }
 }

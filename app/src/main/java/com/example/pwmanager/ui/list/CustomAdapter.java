@@ -1,9 +1,11 @@
 package com.example.pwmanager.ui.list;
 
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +17,7 @@ import com.example.pwmanager.model.PasswordItem;
 
 import java.util.ArrayList;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> implements ItemTouchHelperListener {
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> implements ItemTouchHelperListener, OnDialogListener {
 
 
     private ArrayList<PasswordItem> items;
@@ -116,6 +118,48 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         items.remove(position);
         Toast.makeText(context, "삭제되었습니다.", Toast.LENGTH_SHORT).show();
         notifyItemRemoved(position);
+        notifyDataSetChanged();
+
+        new StoreUtils(context).updateItems(items);
+    }
+
+    @Override
+    public void onLeftClick(int position, RecyclerView.ViewHolder viewHolder) {
+        //수정 버튼 클릭시 다이얼로그 생성
+        CustomDialog dialog = new CustomDialog(context, position, items.get(position));
+
+        //화면 사이즈 구하기
+        DisplayMetrics dm = context.getApplicationContext().getResources().getDisplayMetrics();
+        int width = dm.widthPixels;
+        int height = dm.heightPixels;
+//
+        //다이얼로그 사이즈 세팅
+        WindowManager.LayoutParams wm = dialog.getWindow().getAttributes();
+        wm.copyFrom(dialog.getWindow().getAttributes());
+        wm.width = (int) (width);
+        wm.height = height;
+
+        //다이얼로그 Listener 세팅
+        dialog.setDialogListener(this);
+
+        //다이얼로그 띄우기
+        dialog.show();
+    }
+
+    @Override
+    public void onRightClick(int position, RecyclerView.ViewHolder viewHolder) {
+        items.remove(position);
+        Toast.makeText(context, "삭제되었습니다.", Toast.LENGTH_SHORT).show();
+        notifyItemRemoved(position);
+        notifyDataSetChanged();
+
+        new StoreUtils(context).updateItems(items);
+    }
+
+    @Override
+    public void onFinish(int position, PasswordItem item) {
+        items.set(position, item);
+        notifyItemChanged(position);
         notifyDataSetChanged();
 
         new StoreUtils(context).updateItems(items);

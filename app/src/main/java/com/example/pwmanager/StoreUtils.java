@@ -39,8 +39,7 @@ public class StoreUtils {
     }
 
     public void removeItem(PasswordItem items) {
-
-        sharedPreferences.edit().remove(items.getDate()).commit();
+        sharedPreferences.edit().remove("passwords").commit();
     }
 
     public void readdItem(PasswordItem item1, PasswordItem item2) {

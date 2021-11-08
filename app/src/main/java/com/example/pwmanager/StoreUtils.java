@@ -42,7 +42,7 @@ public class StoreUtils {
         sharedPreferences.edit().remove("passwords").commit();
     }
 
-    public void readdItem(PasswordItem item1, PasswordItem item2) {
+    public void readItem(PasswordItem item1, PasswordItem item2) {
         ArrayList<PasswordItem> items = getItems();
         int index = items.indexOf(item1);
         items.set(index,item2);
@@ -57,10 +57,14 @@ public class StoreUtils {
             String url = item.getUrl();
             String id = item.getId();
             String password = item.getEncryptPassword();
+            String push = item.getPush();
             String memo = item.getMemo();
 //            item.setDate(storeDate);
             String date = item.getDate();
-            String result = name + DELIM + url + DELIM + id + DELIM + password + DELIM + memo + DELIM + date;
+            String pushOnOff = String.valueOf(item.getPushOnOff());
+            String month = String.valueOf(item.getMonth());
+            String year = String.valueOf(item.getYear());
+            String result = name + DELIM + url + DELIM + id + DELIM + password + DELIM + push + DELIM + memo + DELIM + date + DELIM + pushOnOff + DELIM + month + DELIM + year;
             String base64data = Base64.encodeToString(result.getBytes(), Base64.DEFAULT);
             set.add(base64data);
         }
@@ -79,9 +83,14 @@ public class StoreUtils {
             item.setUrl(ss[1]);
             item.setId(ss[2]);
             item.setEncryptPassword(ss[3]);
-            item.setMemo(ss[4]);
-            item.setDate(ss[5]);
+            item.setPush(ss[4]);
+            item.setMemo(ss[5]);
+            item.setDate(ss[6]);
+            item.setPushOnOff(ss[7]);
+            item.setMonth(ss[8]);
+            item.setYear(ss[9]);
             items.add(item);
+            System.out.println("StoreUtils: "+ item);
         }
         return items;
     }

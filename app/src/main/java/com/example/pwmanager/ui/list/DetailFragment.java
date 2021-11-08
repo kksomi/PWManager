@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -13,8 +14,11 @@ import com.example.pwmanager.Application;
 import com.example.pwmanager.CipherUtils;
 import com.example.pwmanager.R;
 
+import org.w3c.dom.Text;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class DetailFragment extends Fragment {
@@ -25,9 +29,11 @@ public class DetailFragment extends Fragment {
     private TextView idText;
     private TextView urlText;
     private TextView pwText;
+    private TextView pushText;
     private TextView memoText;
     private String pw;
     private TextView dateText;
+    private RadioButton pushOn, pushOff;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,6 +53,10 @@ public class DetailFragment extends Fragment {
         pwText = view.findViewById(R.id.view_pw);
         memoText = view.findViewById(R.id.view_memo);
         dateText = view.findViewById(R.id.view_userPush);
+//        pushText = view.findViewById(R.id.view_userPush);
+
+        pushOn = view.findViewById(R.id.rb_on);
+        pushOff = view.findViewById(R.id.rb_off);
 
         TextView textView = (TextView) view.findViewById(R.id.view_pw);
 
@@ -69,6 +79,16 @@ public class DetailFragment extends Fragment {
                 e.printStackTrace();
             }
             date = newFormat.format(dt);
+
+            if (item.getPushOnOff() == false) {
+                pushOn.setChecked(false);
+                pushOff.setChecked(true);
+            }
+            else if (item.getPushOnOff() == true) {
+                pushOn.setChecked(true);
+                pushOff.setChecked(false);
+            }
+
 
             if (item != null) {
 

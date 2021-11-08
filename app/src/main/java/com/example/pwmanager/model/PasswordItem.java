@@ -12,7 +12,10 @@ public class PasswordItem {
     private String url;
     private String id;
     private String encryptPassword;
-    private boolean push;
+    private String push;
+    private boolean push_on_off; //push의 On,Off
+    private int month; //몇 개월 후
+    private int year; //몇 년 후
     private String memo;
     private String date; //날짜
 
@@ -52,12 +55,36 @@ public class PasswordItem {
         this.encryptPassword = encryptPassword;
     }
 
-    public boolean isPush() {
+    public String getPush() {
         return push;
     }
 
-    public void setPush(boolean push) {
+    public void setPush(String push) {
         this.push = push;
+    }
+
+    public boolean getPushOnOff() {
+        return push_on_off;
+    }
+
+    public void setPushOnOff(boolean push_on_off) {
+        this.push_on_off = push_on_off;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year){
+        this.year = year;
     }
 
     public String getMemo() {
@@ -95,9 +122,25 @@ public class PasswordItem {
                 ", url='" + url + '\'' +
                 ", id='" + id + '\'' +
                 ", encryptPassword='" + encryptPassword + '\'' +
-                ", push=" + push +
+                ", push='" + push + '\'' +
                 ", memo='" + memo + '\'' +
                 ", Date='" + date + '\'' +
+                ", pushOnOff='" + push_on_off + '\'' +
+                ", month='" + month + '\'' +
+                ", year='" + year + '\'' +
                 '}';
+    }
+
+    //형 변환
+    public void setPushOnOff(String pushOnOff) {
+        this.push_on_off = Boolean.parseBoolean(pushOnOff);
+    }
+
+    public void setMonth(String month) {
+        this.month = Integer.parseInt(month);
+    }
+
+    public void setYear(String year) {
+        this.year = Integer.parseInt(year);
     }
 }

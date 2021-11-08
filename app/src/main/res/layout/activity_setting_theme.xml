@@ -29,13 +29,13 @@
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:checkedButton="@id/radioButton">
 
             <RadioButton
                 android:id="@+id/radioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:checked="true"
                 android:text="라이트 모드"
                 android:textSize="18sp" />
 

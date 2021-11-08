@@ -2,9 +2,12 @@ package com.example.pwmanager.ui.list;
 
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -24,6 +27,8 @@ public class ListFragment extends Fragment {
     private RecyclerView recyclerView;
     private CustomAdapter adapter;
     private ItemTouchHelper helper;
+    private EditText search;
+    private ArrayList<PasswordItem> filteredList;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -36,9 +41,32 @@ public class ListFragment extends Fragment {
         adapter = new CustomAdapter();
         recyclerView = root.findViewById(R.id.list_rcview);
         recyclerView.setAdapter(adapter);
+        search = root.findViewById(R.id.search);
+
+        filteredList = new ArrayList<>();
 
         helper = new ItemTouchHelper(new ItemTouchHelperCallback(adapter));
         helper.attachToRecyclerView(recyclerView);
+
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                String searchText = search.getText().toString();
+                searchFilter(searchText);
+
+            }
+        });
 
         //item 클릭 시 DetailFragment 로 화면 전환
         adapter.setOnItemClickListener(item -> {
@@ -54,6 +82,21 @@ public class ListFragment extends Fragment {
             adapter.setItems(passwordItems);
         });
         return root;
+    }
+
+    public void searchFilter(String searchText) {
+        filteredList.clear();
+        ArrayList<PasswordItem> items = viewModel.getPasswordList().getValue();
+        for(int i = 0; i < items.size(); i++) {
+            if(items.get(i).getName().toLowerCase().contains(searchText.toLowerCase())) {
+                filteredList.add(items.get(i));
+            }
+            else if(items.get(i).getUrl().toLowerCase().contains(searchText.toLowerCase())) {
+                filteredList.add(items.get(i));
+            }
+        }
+
+        adapter.filterList(filteredList);
     }
 
     @Override

@@ -23,6 +23,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private ArrayList<PasswordItem> items;
     private OnItemClickListener onItemClickListener;
     private Context context;
+    private ArrayList<String> unFilteredlist;
+    private ArrayList<String> filteredList;
 
     // 아이템을 가지고 있는 역할
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -163,5 +165,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         notifyDataSetChanged();
 
         new StoreUtils(context).updateItems(items);
+    }
+
+    public void filterList(ArrayList<PasswordItem> filteredList) {
+        items = filteredList;
+        notifyDataSetChanged();
     }
 }

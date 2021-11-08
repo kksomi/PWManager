@@ -34,6 +34,7 @@ public class DetailFragment extends Fragment {
     private String pw;
     private TextView dateText;
     private RadioButton pushOn, pushOff;
+    private int month, year;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,17 +70,25 @@ public class DetailFragment extends Fragment {
 
         //선택한 비밀번호 정보 불러오기
         viewModel.getSelectItem().observe(getViewLifecycleOwner(), item -> {
-            String date;
+            String date = null;
+            month = item.getMonth();
+            year = item.getYear();
+
+            Date dt = new Date();
+
+            //포맷변경
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             SimpleDateFormat newFormat = new SimpleDateFormat("yyyy-MM-dd");
-            Date dt = null;
-            try {
-                dt = format.parse(item.getDate());
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            date = newFormat.format(dt);
 
+            //시간 더하기
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(dt);
+            cal.add(Calendar.MONTH, month);
+            cal.add(Calendar.YEAR, year);
+
+            date = newFormat.format(cal.getTime());
+
+            //알림 on/off 설정
             if (item.getPushOnOff() == false) {
                 pushOn.setChecked(false);
                 pushOff.setChecked(true);

@@ -94,8 +94,7 @@
                     android:ems="10"
                     android:gravity="center_vertical"
                     android:hint=""
-                    android:inputType="textPersonName"
-                    android:textIsSelectable="true" />
+                    android:inputType="textPersonName" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -109,8 +108,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:hint=""
-                        android:inputType="textUri"
-                        android:textIsSelectable="true" />
+                        android:inputType="textUri" />
 
                 </LinearLayout>
 
@@ -122,8 +120,7 @@
                     android:ems="10"
                     android:gravity="center_vertical"
                     android:hint=""
-                    android:inputType="text"
-                    android:textIsSelectable="true" />
+                    android:inputType="text" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -139,8 +136,7 @@
                         android:clickable="true"
                         android:gravity="center_vertical"
                         android:hint="비밀번호 확인하기"
-                        android:inputType="text"
-                        android:textIsSelectable="true" />
+                        android:inputType="text" />
                 </LinearLayout>
 
 
@@ -152,7 +148,7 @@
                     android:orientation="vertical">
 
                     <RadioGroup
-                        android:id="@+id/radio_group"
+                        android:id="@+id/radioGroup"
                         android:layout_width="match_parent"
                         android:layout_height="0px"
                         android:layout_weight="1"
@@ -160,14 +156,14 @@
                         android:orientation="horizontal">
 
                         <RadioButton
-                            android:id="@+id/radioBtn_on"
+                            android:id="@+id/rb_on"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="ON" />
 
                         <RadioButton
-                            android:id="@+id/radioBtn_off"
+                            android:id="@+id/rb_off"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -194,8 +190,7 @@
                     android:gravity="center_vertical"
                     android:hint=""
                     android:inputType="textMultiLine"
-                    android:lines="5"
-                    android:textIsSelectable="true" />
+                    android:lines="5" />
 
             </LinearLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>

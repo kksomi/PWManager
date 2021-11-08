@@ -12,6 +12,18 @@
     <string name="memo">메모</string>
     <string name="save">저장</string>
     <string name="edit">수정</string>
+    <!-- 알림 선택 창 문자열 리스트 -->
+    <string-array name="Date">
+        <item>"없음"</item>
+        <item>"1개월 후"</item>
+        <item>"2개월 후"</item>
+        <item>"3개월 후"</item>
+        <item>"6개월 후"</item>
+        <item>"1년 후"</item>
+        <item>"2년 후"</item>
+        <item>"3년 후"</item>
+    </string-array>
+
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>

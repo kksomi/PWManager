@@ -1,10 +1,12 @@
 package com.example.pwmanager.ui.setting;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,16 +15,23 @@ import com.example.pwmanager.ThemeUtil;
 
 public class SettingThemeActivity extends AppCompatActivity {
 
-    Button r_btn_light,r_btn_dark;
+    RadioButton r_btn_light,r_btn_dark;
     String themeColor;
+    SharedPreferences settings;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_theme);
 
+        settings = getSharedPreferences("Answer",0);
+        editor = settings.edit();
+
         r_btn_light = findViewById(R.id.radioButton);
         r_btn_dark = findViewById(R.id.radioButton2);
+
+        r_btn_light.setChecked(true);
 
         r_btn_light.setOnClickListener((new View.OnClickListener() {
             @Override
@@ -30,7 +39,10 @@ public class SettingThemeActivity extends AppCompatActivity {
                 themeColor = ThemeUtil.LIGHT_MODE;
                 ThemeUtil.applyTheme(themeColor);
                 ThemeUtil.modSave(getApplicationContext(),themeColor);
-            }
+                editor.putBoolean("r_btn_light",true);
+                editor.putBoolean("r_btn_dark",false);
+                editor.commit();
+                }
         }));
 
         r_btn_dark.setOnClickListener(new View.OnClickListener() {
@@ -39,10 +51,19 @@ public class SettingThemeActivity extends AppCompatActivity {
                 themeColor = ThemeUtil.DARK_MODE;
                 ThemeUtil.applyTheme(themeColor);
                 ThemeUtil.modSave(getApplicationContext(),themeColor);
+                editor.putBoolean("r_btn_light",false);
+                editor.putBoolean("r_btn_dark",true);
+                editor.commit();
             }
         });
         //데이터 가져오기
         Intent intent = getIntent();
+
+        boolean btn_light = settings.getBoolean("r_btn_light",false);
+        boolean btn_dark = settings.getBoolean("r_btn_dark",false);
+
+        r_btn_light.setChecked(btn_light);
+        r_btn_dark.setChecked(btn_dark);
     }
 
     //취소, 확인 버튼 클릭
@@ -64,5 +85,4 @@ public class SettingThemeActivity extends AppCompatActivity {
         }
         return true;
     }
-
 }

@@ -22,9 +22,7 @@ import com.example.pwmanager.model.PasswordItem;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 //비밀번호 추가 클래스
 public class AddFragment extends Fragment {
@@ -37,6 +35,7 @@ public class AddFragment extends Fragment {
     private TextInputEditText pwText;
     private TextInputEditText memoText;
     private Button btn;
+    private Button btnCrt;
 
     private TextView pushText;
     private Button btnPush;
@@ -56,6 +55,7 @@ public class AddFragment extends Fragment {
         btn = root.findViewById(R.id.input_button);
         pushText = root.findViewById(R.id.input_push);
         btnPush = root.findViewById(R.id.btn_selectPush);
+        btnCrt = root.findViewById(R.id.btn_createPW);
 
         //push 선택 버튼 클릭 이벤트
         btnPush.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +98,20 @@ public class AddFragment extends Fragment {
                 });
 
                 builder.show(); //다이얼로그 화면 출력
+            }
+        });
+
+        btnCrt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CreatePassword cp = new CreatePassword();
+                cp.show(getChildFragmentManager(), "create password");
+                cp.setDialogResult(new CreatePassword.OnMyDialogResult() {
+                    @Override
+                    public void finish(String result) {
+                        pwText.setText(result);
+                    }
+                });
             }
         });
 

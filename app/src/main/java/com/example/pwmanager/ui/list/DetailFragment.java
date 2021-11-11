@@ -74,7 +74,14 @@ public class DetailFragment extends Fragment {
             month = item.getMonth();
             year = item.getYear();
 
-            Date dt = new Date();
+            String today = item.getDate();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            Date dt = null;
+            try {
+                dt = dateFormat.parse(today);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
 
             //포맷변경
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");

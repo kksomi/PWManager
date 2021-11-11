@@ -27,7 +27,6 @@
         </activity>
         <activity android:name=".ui.login.FirstMasterCreateActivity" />
         <activity android:name=".ui.login.FirstLoginActivity" />
-        <activity android:name=".ui.setting.SettingNoticeActivity" />
         <activity android:name=".ui.setting.SettingMasterActivity" />
         <activity
             android:name=".MainActivity"

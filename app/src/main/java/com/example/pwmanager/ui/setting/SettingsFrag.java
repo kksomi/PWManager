@@ -49,15 +49,6 @@ public class SettingsFrag extends Fragment {
             }
         });
 
-        linearMaster = rootView.findViewById(R.id.linearNotice);
-        linearMaster.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SettingNoticeActivity.class);
-                startActivity(intent);
-            }
-        });
-
 //        theme = rootView.findViewById(R.id.theme);
 //        theme.setOnClickListener(new View.OnClickListener() {
 //            @Override

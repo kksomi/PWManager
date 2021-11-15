@@ -68,6 +68,9 @@ public class DetailFragment extends Fragment {
         memoText.setEnabled(true);
         dateText.setEnabled(true);
 
+//        notificationManager = (NotificationManager)getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+//        alarmManager = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
+
         //선택한 비밀번호 정보 불러오기
         viewModel.getSelectItem().observe(getViewLifecycleOwner(), item -> {
             String date = null;
@@ -75,7 +78,11 @@ public class DetailFragment extends Fragment {
             year = item.getYear();
 
             String today = item.getDate();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
+            //포맷변경
+            SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
             Date dt = null;
             try {
                 dt = dateFormat.parse(today);
@@ -83,24 +90,20 @@ public class DetailFragment extends Fragment {
                 e.printStackTrace();
             }
 
-            //포맷변경
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-            SimpleDateFormat newFormat = new SimpleDateFormat("yyyy-MM-dd");
-
             //시간 더하기
             Calendar cal = Calendar.getInstance();
             cal.setTime(dt);
             cal.add(Calendar.MONTH, month);
             cal.add(Calendar.YEAR, year);
 
-            date = newFormat.format(cal.getTime());
+            date = dateFormat.format(cal.getTime());
 
             //알림 on/off 설정
-            if (item.getPushOnOff() == false) {
+            if (item.getPushOnOff() == false) { //off일때
                 pushOn.setChecked(false);
                 pushOff.setChecked(true);
             }
-            else if (item.getPushOnOff() == true) {
+            else if (item.getPushOnOff() == true) { //on일때
                 pushOn.setChecked(true);
                 pushOff.setChecked(false);
             }
@@ -131,4 +134,18 @@ public class DetailFragment extends Fragment {
 
         return view;
     }
+
+//    private void setAlarm() {
+//        //AlarmReceiver에 값 전달
+//        Intent receiverIntent = new Intent(getActivity(), AlarmRecevier.class);
+//        PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), 0, receiverIntent, 0);
+//        Date datetime = null;
+//        try {
+//            datetime = timeFormat.parse(date);
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//        alarmManager.set(AlarmManager.RTC, cal.getTimeInMillis(),pendingIntent);
+//    }
+
 }

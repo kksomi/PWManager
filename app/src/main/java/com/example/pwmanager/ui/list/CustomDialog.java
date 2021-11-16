@@ -1,7 +1,9 @@
 package com.example.pwmanager.ui.list;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,6 +26,7 @@ public class CustomDialog extends Dialog {
     private TextInputEditText pwText;
     private TextInputEditText memoText;
     private Button btn;
+    private Button btnPush;
 
     private TextView pushText;
     private String name, url, id, pw, push, memo;
@@ -64,6 +67,50 @@ public class CustomDialog extends Dialog {
         memoText = findViewById(R.id.input_memo);
         memoText.setText(memo);
         btn = findViewById(R.id.input_button);
+        btnPush = findViewById(R.id.btn_selectPush);
+
+        btnPush.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String[] array = context.getResources().getStringArray(R.array.Date);
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                final int[] selectIndex = {0};
+
+                //제목 설정
+                builder.setTitle("알림 선택");
+
+                //확인 버튼 설정
+                builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        pushText.setText(array[selectIndex[0]]);
+//                        Toast.makeText(getActivity(), "저장한것은:"+array[selectIndex[0]], Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                //취소 버튼 설정
+                builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                //라디오버튼 목록 설정
+                //첫번째 매개변수는 라디오버튼 항목을 문자열로 구성한 배열, 두번째는 초기에 선택되어지는 항목의 index
+                builder.setSingleChoiceItems(array, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //여러개의 라디오버튼들 중에서 선택된 인덱스를 저장
+                        selectIndex[0] = which;
+                    }
+                });
+
+                builder.show(); //다이얼로그 화면 출력
+            }
+        });
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +134,8 @@ public class CustomDialog extends Dialog {
                     else{
                         if(push.equals("없음")){
                             push_on_off = false;
+                            month = 0;
+                            year = 0;
                         }
                         else{
                             push_on_off = true;

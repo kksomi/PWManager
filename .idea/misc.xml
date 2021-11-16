@@ -18,11 +18,25 @@
         <entry key="..\:/Users/seoeun.DESKTOP-JHJ30N5/StudioProjects/PWManager/app/src/main/res/layout/activity_web.xml" value="0.1" />
         <entry key="..\:/Users/seoeun.DESKTOP-JHJ30N5/StudioProjects/PWManager/app/src/main/res/layout/detail.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/seoeun.DESKTOP-JHJ30N5/StudioProjects/PWManager/app/src/main/res/layout/web_listitem.xml" value="0.1" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/drawable/border.xml" value="0.28072916666666664" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/drawable/button.xml" value="0.28072916666666664" />
         <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_insert.xml" value="0.19479166666666667" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_login.xml" value="0.196875" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_login_first.xml" value="0.196875" />
         <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_main.xml" value="0.2564814814814815" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_master_first_create.xml" value="0.196875" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_setting_master.xml" value="0.196875" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_setting_theme.xml" value="0.196875" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_settings.xml" value="0.196875" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_web.xml" value="0.196875" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/create_password.xml" value="0.196875" />
         <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/customdialog.xml" value="0.1" />
         <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/detail.xml" value="0.1388888888888889" />
         <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/fragment_list.xml" value="0.26153846153846155" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/master_change.xml" value="0.196875" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/master_change_check.xml" value="0.196875" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/master_change_complete.xml" value="0.196875" />
+        <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/layout/web_listitem.xml" value="0.196875" />
         <entry key="..\:/Users/somi/AndroidStudioProjects/PWManager/app/src/main/res/menu/bottom_navigation.xml" value="0.2564814814814815" />
       </map>
     </option>

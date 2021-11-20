@@ -17,7 +17,7 @@
             android:layout_height="53dp"
             android:background="#5A5A5A"
             android:gravity="center"
-            android:text="마스터 암호 설정"
+            android:text="보안 설정"
             android:textColor="#fff"
             android:textSize="20sp" />
     </LinearLayout>
@@ -28,56 +28,57 @@
         android:layout_height="50dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:paddingLeft="24dp">
+        android:paddingLeft="24dp"
+        android:background="@color/cardview_shadow_start_color">
 
         <TextView
             android:id="@+id/master_change"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="마스터 비밀번호 변경"
+            android:text="마스터 비밀번호 변경                                            >"
             android:textSize="18sp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
 
-    <!--    &lt;!&ndash; 자동 잠금 &ndash;&gt;-->
-    <!--    <LinearLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:gravity="center_vertical"-->
-    <!--        android:orientation="vertical"-->
-    <!--        android:paddingLeft="24dp"-->
-    <!--        android:paddingRight="24dp">-->
+    <!-- 자동 잠금 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
 
-    <!--        <TextView-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginTop="10dp"-->
-    <!--            android:text="자동 잠금"-->
-    <!--            android:textSize="18sp"-->
-    <!--            android:textStyle="bold" />-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="자동 잠금"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <!--        <Switch-->
-    <!--            android:id="@+id/switch2"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginStart="5dp"-->
-    <!--            android:layout_marginLeft="5dp"-->
-    <!--            android:layout_marginTop="10dp"-->
-    <!--            android:text="Face ID"-->
-    <!--            android:textSize="16sp" />-->
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="지문 잠금"
+            android:textSize="16sp" />
 
-    <!--        <Switch-->
-    <!--            android:id="@+id/switch3"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginStart="5dp"-->
-    <!--            android:layout_marginLeft="5dp"-->
-    <!--            android:layout_marginBottom="10dp"-->
-    <!--            android:text="Touch ID"-->
-    <!--            android:textSize="16sp" />-->
-    <!--    </LinearLayout>-->
+<!--        <Switch-->
+<!--            android:id="@+id/switch3"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:text="Touch ID"-->
+<!--            android:textSize="16sp" />-->
+    </LinearLayout>
 
     <!-- 버튼 -->
     <LinearLayout

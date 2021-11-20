@@ -175,9 +175,18 @@
                         android:id="@+id/input_push"
                         android:layout_width="0px"
                         android:layout_height="match_parent"
-                        android:layout_weight="3.5"
+                        android:layout_weight="2.5"
                         android:gravity="center_vertical"
                         android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/btn_deletePush"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        android:text="삭제"
+                        app:backgroundTint="#858585" />
 
                     <Button
                         android:id="@+id/btn_selectPush"
@@ -215,7 +224,6 @@
                 android:layout_weight="1"
                 android:backgroundTint="#B1AEAE"
                 android:text="저장"
-                android:textColor="@color/black"
                 android:textSize="16sp"
                 app:backgroundTint="#B1AEAE"
                 app:iconTint="@color/white" />

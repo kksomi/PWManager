@@ -14,8 +14,9 @@ public class PasswordItem {
     private String encryptPassword;
     private String push;
     private boolean push_on_off; //push의 On,Off
-    private int month; //몇 개월 후
-    private int year; //몇 년 후
+    private int year; //년
+    private int month; //월
+    private int day; //일
     private String memo;
     private String date; //날짜
 
@@ -126,8 +127,6 @@ public class PasswordItem {
                 ", memo='" + memo + '\'' +
                 ", Date='" + date + '\'' +
                 ", pushOnOff='" + push_on_off + '\'' +
-                ", month='" + month + '\'' +
-                ", year='" + year + '\'' +
                 '}';
     }
 
@@ -136,11 +135,4 @@ public class PasswordItem {
         this.push_on_off = Boolean.parseBoolean(pushOnOff);
     }
 
-    public void setMonth(String month) {
-        this.month = Integer.parseInt(month);
-    }
-
-    public void setYear(String year) {
-        this.year = Integer.parseInt(year);
-    }
 }

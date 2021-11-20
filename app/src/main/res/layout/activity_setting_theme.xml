@@ -38,8 +38,6 @@
                 android:layout_height="wrap_content"
                 android:text="라이트 모드"
                 android:textSize="18sp" />
-<!--                android:checked="true"-->
-                />
 
             <RadioButton
                 android:id="@+id/radioButton2"

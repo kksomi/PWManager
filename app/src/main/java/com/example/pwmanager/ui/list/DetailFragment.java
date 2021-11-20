@@ -14,8 +14,6 @@ import com.example.pwmanager.Application;
 import com.example.pwmanager.CipherUtils;
 import com.example.pwmanager.R;
 
-import org.w3c.dom.Text;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -53,8 +51,8 @@ public class DetailFragment extends Fragment {
         urlText = view.findViewById(R.id.view_url);
         pwText = view.findViewById(R.id.view_pw);
         memoText = view.findViewById(R.id.view_memo);
-        dateText = view.findViewById(R.id.view_userPush);
-//        pushText = view.findViewById(R.id.view_userPush);
+//        dateText = view.findViewById(R.id.view_userPush);
+        pushText = view.findViewById(R.id.view_userPush);
 
         pushOn = view.findViewById(R.id.rb_on);
         pushOff = view.findViewById(R.id.rb_off);
@@ -66,10 +64,8 @@ public class DetailFragment extends Fragment {
         urlText.setEnabled(true);
         pwText.setEnabled(true);
         memoText.setEnabled(true);
-        dateText.setEnabled(true);
-
-//        notificationManager = (NotificationManager)getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
-//        alarmManager = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
+//        dateText.setEnabled(true);
+        pushText.setEnabled(true);
 
         //선택한 비밀번호 정보 불러오기
         viewModel.getSelectItem().observe(getViewLifecycleOwner(), item -> {
@@ -124,7 +120,8 @@ public class DetailFragment extends Fragment {
                 idText.setText(item.getId());
                 urlText.setText(item.getUrl());
                 memoText.setText(item.getMemo());
-                dateText.setText(date);
+//                dateText.setText(date);
+                pushText.setText(item.getPush());
 
             }
         });
@@ -134,18 +131,5 @@ public class DetailFragment extends Fragment {
 
         return view;
     }
-
-//    private void setAlarm() {
-//        //AlarmReceiver에 값 전달
-//        Intent receiverIntent = new Intent(getActivity(), AlarmRecevier.class);
-//        PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), 0, receiverIntent, 0);
-//        Date datetime = null;
-//        try {
-//            datetime = timeFormat.parse(date);
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
-//        alarmManager.set(AlarmManager.RTC, cal.getTimeInMillis(),pendingIntent);
-//    }
 
 }

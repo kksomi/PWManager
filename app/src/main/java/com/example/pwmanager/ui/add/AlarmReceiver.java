@@ -1,4 +1,4 @@
-package com.example.pwmanager;
+package com.example.pwmanager.ui.add;
 
 import android.app.AlarmManager;
 import android.app.Notification;
@@ -13,17 +13,20 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
+import com.example.pwmanager.R;
+import com.example.pwmanager.ui.add.AddFragment;
 import com.example.pwmanager.ui.list.DetailFragment;
 
-public class AlarmRecevier extends BroadcastReceiver {
-    public AlarmRecevier(){ }
+public class AlarmReceiver extends BroadcastReceiver {
+
+    public AlarmReceiver(){ }
 
     NotificationManager notificationManager;
     NotificationCompat.Builder builder;
 
     //채널 설정해줘야 Notification이 작동
     private static String CHANNEL_ID = "channel1";
-    private static String CHANNEL_NAME = "channel1";
+    private static String CHANNEL_NAME = "Channel1";
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -43,7 +46,7 @@ public class AlarmRecevier extends BroadcastReceiver {
         }
 
         //알림창 클릭 시 activity 화면 부름
-        Intent intent2 = new Intent(context, DetailFragment.class);
+        Intent intent2 = new Intent(context, AddFragment.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 101, intent2, PendingIntent.FLAG_UPDATE_CURRENT);
 
         //알림창 제목
@@ -53,7 +56,7 @@ public class AlarmRecevier extends BroadcastReceiver {
         //알림창 아이콘
         builder.setSmallIcon(R.drawable.login);
         //알림창 터치 시 자동 삭제
-        builder.setAutoCancel(true);
+        //builder.setAutoCancel(true);
 
         builder.setContentIntent(pendingIntent);
 

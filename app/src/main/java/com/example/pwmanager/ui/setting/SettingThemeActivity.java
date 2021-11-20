@@ -25,7 +25,7 @@ public class SettingThemeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_theme);
 
-        settings = getSharedPreferences("Answer",0);
+        settings = getSharedPreferences("Answer_theme",0);
         editor = settings.edit();
 
         r_btn_light = findViewById(R.id.radioButton);

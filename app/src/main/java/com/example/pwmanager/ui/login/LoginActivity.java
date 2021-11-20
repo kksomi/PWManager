@@ -20,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView pw_key;
     private String master_password;
     private String master_password_pref; // 저장소에서 불러올 비밀번호
+    private boolean cb_state;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +31,20 @@ public class LoginActivity extends AppCompatActivity {
         pw_key = findViewById(R.id.pw_key);
 
         SharedPreferences MyPref= getSharedPreferences("MyPref", MODE_PRIVATE);
+        SharedPreferences MyPref2= getSharedPreferences("Answer_auth", MODE_PRIVATE);
         // default 값 : 저장소에서 가져올 값이 없을때 주어질 값
         master_password_pref = MyPref.getString("master_password","");
+        cb_state = MyPref2.getBoolean("c_btn_state",false);
 
         if (master_password_pref.equals("")) {
             Intent intent = new Intent(LoginActivity.this, FirstLoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //인텐트 플래그 설정
+            startActivity(intent); //인텐트 이동
+            finish();
+        }
+
+        if (cb_state) {
+            Intent intent = new Intent(LoginActivity.this, AuthLoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //인텐트 플래그 설정
             startActivity(intent); //인텐트 이동
             finish();

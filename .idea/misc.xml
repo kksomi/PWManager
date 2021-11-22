@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_main.xml" value="0.125" />
         <entry key="..\:/Users/seoeun.DESKTOP-JHJ30N5/StudioProjects/PWManager/app/src/main/res/layout/activity_auth_fingerprint.xml" value="0.1" />
         <entry key="..\:/Users/seoeun.DESKTOP-JHJ30N5/StudioProjects/PWManager/app/src/main/res/layout/activity_auth_login.xml" value="0.136" />
         <entry key="..\:/Users/seoeun.DESKTOP-JHJ30N5/StudioProjects/PWManager/app/src/main/res/layout/activity_insert.xml" value="0.264" />

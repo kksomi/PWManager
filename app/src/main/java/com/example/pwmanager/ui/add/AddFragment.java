@@ -128,7 +128,6 @@ public class AddFragment extends Fragment {
                 int month = calendar.get(Calendar.MONTH);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-
                 DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) { //month+1 이 선택한 월
@@ -138,6 +137,9 @@ public class AddFragment extends Fragment {
                         pushDay = dayOfMonth;
                     }
                 }, year, month, day);
+
+                //현재 날짜 이전에는 선택할 수 없도록 설정
+                datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis());
 
                 datePickerDialog.show();
 

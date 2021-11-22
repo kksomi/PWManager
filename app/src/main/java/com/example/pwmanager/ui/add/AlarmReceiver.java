@@ -1,5 +1,6 @@
 package com.example.pwmanager.ui.add;
 
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -9,13 +10,21 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.example.pwmanager.MainActivity;
 import com.example.pwmanager.R;
+import com.example.pwmanager.model.PasswordItem;
 import com.example.pwmanager.ui.add.AddFragment;
+import com.example.pwmanager.ui.list.CustomDialog;
 import com.example.pwmanager.ui.list.DetailFragment;
+import com.example.pwmanager.ui.list.ListFragment;
+import com.example.pwmanager.ui.list.ListViewModel;
+import com.example.pwmanager.ui.login.LoginActivity;
 
 public class AlarmReceiver extends BroadcastReceiver {
 
@@ -45,8 +54,8 @@ public class AlarmReceiver extends BroadcastReceiver {
             builder = new NotificationCompat.Builder(context);
         }
 
-        //알림창 클릭 시 activity 화면 부름
-        Intent intent2 = new Intent(context, AddFragment.class);
+       //알림창 클릭 시 activity 화면 부름
+        Intent intent2 = new Intent(context, LoginActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 101, intent2, PendingIntent.FLAG_UPDATE_CURRENT);
 
         //알림창 제목
@@ -55,8 +64,8 @@ public class AlarmReceiver extends BroadcastReceiver {
         builder.setContentText("비밀번호를 변경해야하는 날입니다.");
         //알림창 아이콘
         builder.setSmallIcon(R.drawable.login);
-        //알림창 터치 시 자동 삭제
-        //builder.setAutoCancel(true);
+        //알림창 터치 시 삭제
+        builder.setAutoCancel(true);
 
         builder.setContentIntent(pendingIntent);
 

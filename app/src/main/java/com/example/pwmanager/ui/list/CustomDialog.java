@@ -89,7 +89,7 @@ public class CustomDialog extends Dialog {
 
         btnDelete.setVisibility(View.VISIBLE);
 
-        //알림 없음 버튼
+        //알림 삭제 버튼
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,6 +115,9 @@ public class CustomDialog extends Dialog {
                         pushDay = dayOfMonth;
                     }
                 }, year, month, day);
+
+                //현재 날짜 이전에는 선택할 수 없도록 설정
+                datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis());
 
                 datePickerDialog.show();
             }

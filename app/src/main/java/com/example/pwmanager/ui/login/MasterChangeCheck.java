@@ -1,5 +1,6 @@
 package com.example.pwmanager.ui.login;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -23,6 +24,10 @@ public class MasterChangeCheck extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.master_change_check);
+
+        // 상단바 삭제
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         prev_master = findViewById(R.id.prev_master);
         btn_continue = findViewById(R.id.btn_continue);

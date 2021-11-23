@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pwmanager.R;
@@ -24,6 +25,10 @@ public class SettingThemeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_theme);
+
+        // 상단바 삭제
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         settings = getSharedPreferences("Answer_theme",0);
         editor = settings.edit();

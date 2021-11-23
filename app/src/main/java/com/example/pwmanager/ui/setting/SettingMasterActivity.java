@@ -8,6 +8,7 @@ import android.widget.CheckBox;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pwmanager.MainActivity;
@@ -26,6 +27,10 @@ public class SettingMasterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_master);
+
+        // 상단바 삭제
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         settings = getSharedPreferences("Answer_auth",0);
         editor = settings.edit();

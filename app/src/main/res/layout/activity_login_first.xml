@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -7,9 +8,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:orientation="vertical"
-        >
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="150dp"
@@ -22,7 +23,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="30dp"
+            android:layout_marginTop="30dp"
             android:text="지켜줄게 앱에 오신 것을 환영합니다"
             android:textSize="25sp"
             android:textAlignment="center"
@@ -34,7 +35,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="30dp"
             android:layout_margin="30dp"
-            android:text="지켜줄게 앱을 안전하게 이용하기 위해 마스터 비밀번호를 설정해 주세요"
+            android:text="지켜줄게 앱을 안전하게 이용하기 위해 \n마스터 비밀번호를 설정해 주세요"
             android:textSize="15sp"
             android:textAlignment="center"
             android:gravity="center">
@@ -44,14 +45,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp">
+        android:layout_height="0dp"
+        android:layout_weight="2">
 
         <Button
             android:id="@+id/btn_master_create"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
+            app:backgroundTint="#B1AEAE"
+            android:background="@drawable/button"
             android:text="마스터 비밀번호 생성">
         </Button>
 

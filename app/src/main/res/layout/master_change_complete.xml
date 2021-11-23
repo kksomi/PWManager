@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.setting.SettingMasterActivity">
 
-    <!-- 마스터암호설정 -->
+    <!-- 마스터 비밀번호 변경 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="53dp"
+            android:layout_height="55dp"
             android:background="#5A5A5A"
             android:gravity="center"
             android:text="마스터 비밀번호 변경"
@@ -23,13 +25,13 @@
 
     </LinearLayout>
 
-    <!-- 마스터 비밀번호 변경 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:paddingLeft="24dp">
+        android:paddingHorizontal="10dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -40,20 +42,21 @@
 
     </LinearLayout>
 
+    <!-- 버튼 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="6">
 
         <Button
             android:id="@+id/btn_check"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:onClick="myOnClose"
             android:text="완료"
-            android:textSize="15sp"
-            android:layout_width="0dp" />
+            android:layout_marginHorizontal="10dp"
+            app:backgroundTint="#B1AEAE"
+            android:background="@drawable/button"/>
 
     </LinearLayout>
 

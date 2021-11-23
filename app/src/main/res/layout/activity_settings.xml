@@ -12,15 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp" >
 
         <TextView
             android:id="@+id/theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
             android:text="테마 설정"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="18sp" />
@@ -29,29 +27,24 @@
             android:id="@+id/textView16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="5dp"
             android:text="다크모드를 설정합니다." />
 
     </LinearLayout>
 
-    <!-- 마스터 암호 설정 -->
+    <!-- 보안 설정 -->
     <LinearLayout
         android:id="@+id/linearMaster"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp">
 
         <TextView
             android:id="@+id/master"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:text="마스터 암호"
+            android:text="보안 설정"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="18sp" />
 
@@ -59,10 +52,7 @@
             android:id="@+id/textView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="5dp"
-            android:text="처음 잠금 화면에서 나타나는 암호입니다." />
+            android:text="처음 잠금 화면에서 나타나는 암호를 설정합니다." />
     </LinearLayout>
 
 </LinearLayout>

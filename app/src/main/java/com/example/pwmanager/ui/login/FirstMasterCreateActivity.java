@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pwmanager.MainActivity;
@@ -36,6 +37,10 @@ public class FirstMasterCreateActivity extends AppCompatActivity {
 
         btn_login = findViewById(R.id.btn_master_create_done);
         masterEt = findViewById(R.id.masterEt); // master비밀번호
+
+        // 상단바 삭제
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         // 완료 버튼 클릭
         btn_login.setOnClickListener(new View.OnClickListener() {

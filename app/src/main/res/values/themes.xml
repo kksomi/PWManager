@@ -19,11 +19,6 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="DatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
-        <!-- 상단 색 변경 -->
-        <item name="colorAccent">#89A1EF</item>
-    </style>
-
     <style name="Theme.PWManager.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.PWManager.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

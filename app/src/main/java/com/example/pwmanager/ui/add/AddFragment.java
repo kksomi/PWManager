@@ -169,7 +169,7 @@ public class AddFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         urlText.setText(array[selectIndex[0]]);
-                        Toast.makeText(getActivity(), "저장한것은:"+array[selectIndex[0]], Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getActivity(), "저장한것은:"+array[selectIndex[0]], Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -197,8 +197,7 @@ public class AddFragment extends Fragment {
             }
         });
 
-
-
+        //생성 버튼 클릭 이벤트
         btnCrt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -243,8 +242,7 @@ public class AddFragment extends Fragment {
                 //on일때 알람 설정하기
                 setAlarm();
             }
-
-
+            
             String memo = memoText.getText().toString();
             if(memo.length()<=0){
                 memo=" ";
@@ -269,8 +267,9 @@ public class AddFragment extends Fragment {
             item.setEncryptPassword(pw);
             item.setPush(push);
             item.setPushOnOff(push_on_off);
-//            item.setMonth(pushMonth);
-//            item.setYear(pushYear);
+            item.setYear(pushYear);
+            item.setMonth(pushMonth);
+            item.setDay(pushDay);
             item.setMemo(memo);
             item.setDate(date);
             System.out.println("AddFragment: "+item); //저장됨 -> PasswordItem{}으로
@@ -287,8 +286,9 @@ public class AddFragment extends Fragment {
             memoText.setText("");
             date="";
             push_on_off=false;
-//            month=0;
-//            year=0;
+            pushDay=0;
+            pushMonth=0;
+            pushYear=0;
 
         });
 

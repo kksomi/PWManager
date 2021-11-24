@@ -59,7 +59,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 101, intent2, PendingIntent.FLAG_UPDATE_CURRENT);
 
         //알림창 제목
-        builder.setContentTitle("알람");
+        builder.setContentTitle("알림");
         //알림창 내용
         builder.setContentText("비밀번호를 변경해야하는 날입니다.");
         //알림창 아이콘

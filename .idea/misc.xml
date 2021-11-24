@@ -4,12 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_main.xml" value="0.125" />
-        <entry key="..\:/Users/jjang/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_insert.xml" value="0.1" />
-        <entry key="..\:/Users/jjang/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_main.xml" value="0.19166666666666668" />
-        <entry key="..\:/Users/jjang/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_web.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/jjang/AndroidStudioProjects/PWManager/app/src/main/res/layout/create_password.xml" value="0.25729166666666664" />
-        <entry key="..\:/Users/jjang/AndroidStudioProjects/PWManager/app/src/main/res/layout/detail.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/jjang/AndroidStudioProjects/PWManager/app/src/main/res/layout/fragment_list.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PWManager/app/src/main/res/layout/activity_setting_theme.xml" value="0.20923913043478262" />
         <entry key="..\:/Users/seoeun.DESKTOP-JHJ30N5/StudioProjects/PWManager/app/src/main/res/layout/activity_auth_fingerprint.xml" value="0.1" />
         <entry key="..\:/Users/seoeun.DESKTOP-JHJ30N5/StudioProjects/PWManager/app/src/main/res/layout/activity_auth_login.xml" value="0.136" />
         <entry key="..\:/Users/seoeun.DESKTOP-JHJ30N5/StudioProjects/PWManager/app/src/main/res/layout/activity_insert.xml" value="0.264" />

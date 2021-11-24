@@ -46,7 +46,10 @@ public class CustomDialog extends Dialog {
     private TextView pushText;
     private String name, url, id, pw, push, memo;
     private boolean push_on_off;
-    private int pushYear,pushMonth,pushDay;
+
+    private int pushYear = 0;
+    private int pushMonth = 0;
+    private int pushDay = 0;
 
     private AlarmManager alarmManager;
     private NotificationManager notificationManager;
@@ -89,6 +92,10 @@ public class CustomDialog extends Dialog {
         btnDelete = findViewById(R.id.btn_deletePush);
         btnUrl = findViewById(R.id.btn_searchUrl);
 
+        pushYear = item.getYear();
+        pushMonth = item.getMonth();
+        pushDay = item.getDay();
+
         notificationManager = (NotificationManager)getContext().getSystemService(Context.NOTIFICATION_SERVICE);
         alarmManager = (AlarmManager)getContext().getSystemService(Context.ALARM_SERVICE);
 
@@ -99,17 +106,22 @@ public class CustomDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 pushText.setText(null);
+
+                Calendar calendar = Calendar.getInstance();
+                pushYear = calendar.get(Calendar.YEAR);
+                pushMonth = calendar.get(Calendar.MONTH) + 1;
+                pushDay = calendar.get(Calendar.DAY_OF_MONTH);
             }
         });
 
         btnPush.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //캘린더에 현재날짜 가져오기
+                //캘린더에 선택한 날짜 가져오기
                 Calendar calendar = Calendar.getInstance();
-                int year = calendar.get(Calendar.YEAR);
-                int month = calendar.get(Calendar.MONTH);
-                int day = calendar.get(Calendar.DAY_OF_MONTH);
+                int year = item.getYear();
+                int month = item.getMonth() - 1;
+                int day = item.getDay();
 
                 DatePickerDialog datePickerDialog = new DatePickerDialog(context, new DatePickerDialog.OnDateSetListener() {
                     @Override
@@ -191,7 +203,7 @@ public class CustomDialog extends Dialog {
                         url = " ";
                     }
                     String push = pushText.getText().toString();
-                    if (push.length() <= 0) {
+                    if (push.length() <= 0 | push.equals(" ")) {
                         push = " ";
                         push_on_off = false;
                     } else {
@@ -225,8 +237,12 @@ public class CustomDialog extends Dialog {
                     item2.setEncryptPassword(pw);
                     item2.setPush(push);
                     item2.setPushOnOff(push_on_off);
+                    item2.setYear(pushYear);
+                    item2.setMonth(pushMonth);
+                    item2.setDay(pushDay);
                     item2.setMemo(memo);
                     item2.setDate(date);
+                    System.out.println("CustomDialog: "+item2);
 
                     System.out.println(item2);
 
@@ -239,6 +255,9 @@ public class CustomDialog extends Dialog {
                     memoText.setText("");
                     date = "";
                     push_on_off = false;
+                    pushDay=0;
+                    pushMonth=0;
+                    pushYear=0;
 
                     //Listener를 통해 password객체 전달
                     listener.onFinish(position, item2);

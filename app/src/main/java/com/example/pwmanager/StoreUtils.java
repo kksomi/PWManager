@@ -62,9 +62,10 @@ public class StoreUtils {
 //            item.setDate(storeDate);
             String date = item.getDate();
             String pushOnOff = String.valueOf(item.getPushOnOff());
-//            String year = String.valueOf(item.getYear());
-//            String month = String.valueOf(item.getMonth());
-            String result = name + DELIM + url + DELIM + id + DELIM + password + DELIM + push + DELIM + memo + DELIM + date + DELIM + pushOnOff;
+            String year = String.valueOf(item.getYear());
+            String month = String.valueOf(item.getMonth());
+            String day = String.valueOf(item.getDay());
+            String result = name + DELIM + url + DELIM + id + DELIM + password + DELIM + push + DELIM + memo + DELIM + date + DELIM + pushOnOff + DELIM + year + DELIM + month + DELIM + day;
             String base64data = Base64.encodeToString(result.getBytes(), Base64.DEFAULT);
             set.add(base64data);
         }
@@ -87,8 +88,9 @@ public class StoreUtils {
             item.setMemo(ss[5]);
             item.setDate(ss[6]);
             item.setPushOnOff(ss[7]);
-//            item.setMonth(ss[8]);
-//            item.setYear(ss[9]);
+            item.setYear(ss[8]);
+            item.setMonth(ss[9]);
+            item.setDay(ss[10]);
             items.add(item);
             System.out.println("StoreUtils: "+ item);
         }

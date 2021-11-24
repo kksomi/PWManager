@@ -72,6 +72,14 @@ public class PasswordItem {
         this.push_on_off = push_on_off;
     }
 
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
     public int getMonth() {
         return month;
     }
@@ -127,12 +135,27 @@ public class PasswordItem {
                 ", memo='" + memo + '\'' +
                 ", Date='" + date + '\'' +
                 ", pushOnOff='" + push_on_off + '\'' +
+                ", year='" + year + '\'' +
+                ", month='" + month + '\'' +
+                ", day='" + day + '\'' +
                 '}';
     }
 
     //형 변환
     public void setPushOnOff(String pushOnOff) {
         this.push_on_off = Boolean.parseBoolean(pushOnOff);
+    }
+
+    public void setMonth(String month) {
+        this.month = Integer.parseInt(month);
+    }
+
+    public void setYear(String year) {
+        this.year = Integer.parseInt(year);
+    }
+
+    public void setDay(String day) {
+        this.day = Integer.parseInt(day);
     }
 
 }

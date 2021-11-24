@@ -108,6 +108,8 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:hint=""
+                        android:linksClickable="true"
+                        android:autoLink="web"
                         android:inputType="textUri" />
 
                 </LinearLayout>

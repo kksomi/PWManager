@@ -9,23 +9,18 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.text.style.TtsSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
 import androidx.core.app.NotificationCompat;
-import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.pwmanager.Application;
 import com.example.pwmanager.CipherUtils;
 import com.example.pwmanager.R;
 import com.example.pwmanager.model.PasswordItem;
 import com.example.pwmanager.ui.add.AlarmReceiver;
-import com.example.pwmanager.ui.add.CreatePassword;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.ParseException;
@@ -42,7 +37,7 @@ public class CustomDialog extends Dialog {
     private TextInputEditText pwText;
     private TextInputEditText memoText;
     private Button btn;
-    private Button btnPush,btnDelete,btnCrt;
+    private Button btnPush,btnDelete;
 
     private TextView pushText;
     private String name, url, id, pw, push, memo;
@@ -88,7 +83,6 @@ public class CustomDialog extends Dialog {
         btn = findViewById(R.id.input_button);
         btnPush = findViewById(R.id.btn_selectPush);
         btnDelete = findViewById(R.id.btn_deletePush);
-        btnCrt = findViewById(R.id.btn_createPW);
 
         notificationManager = (NotificationManager)getContext().getSystemService(Context.NOTIFICATION_SERVICE);
         alarmManager = (AlarmManager)getContext().getSystemService(Context.ALARM_SERVICE);
@@ -129,21 +123,6 @@ public class CustomDialog extends Dialog {
             }
         });
 
-
-        btnCrt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CreatePassword cp = new CreatePassword();
-                cp.setDialogResult(new CreatePassword.OnMyDialogResult() {
-                    @Override
-                    public void finish(String result) {
-                        pwText.setText(result);
-                    }
-                });
-            }
-        });
-
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -161,7 +140,7 @@ public class CustomDialog extends Dialog {
                         url = " ";
                     }
                     String push = pushText.getText().toString();
-                    if (push.length() <= 0 | push.equals(" ")) {
+                    if (push.length() <= 0) {
                         push = " ";
                         push_on_off = false;
                     } else {

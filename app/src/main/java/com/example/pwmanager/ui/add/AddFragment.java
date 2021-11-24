@@ -1,10 +1,12 @@
 package com.example.pwmanager.ui.add;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -50,6 +52,8 @@ public class AddFragment extends Fragment {
     private TextView pushText;
     private Button btnPush;
 
+    private Button btnUrl;
+
     private int pushYear = 0;
     private int pushMonth = 0;
     private int pushDay = 0;
@@ -74,6 +78,7 @@ public class AddFragment extends Fragment {
         pushText = root.findViewById(R.id.input_push);
         btnPush = root.findViewById(R.id.btn_selectPush);
         btnCrt = root.findViewById(R.id.btn_createPW);
+        btnUrl = root.findViewById(R.id.btn_searchUrl);
 
         notificationManager = (NotificationManager)getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
         alarmManager = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
@@ -145,6 +150,54 @@ public class AddFragment extends Fragment {
 
             }
         });
+
+        //검색 선택 버튼 클릭 이벤트
+        btnUrl.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+                String[] array = getResources().getStringArray(R.array.Url);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+                final int[] selectIndex = {0};
+
+                //제목 설정
+                builder.setTitle("주소 선택");
+
+                //확인 버튼 설정
+                builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        urlText.setText(array[selectIndex[0]]);
+                        Toast.makeText(getActivity(), "저장한것은:"+array[selectIndex[0]], Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                //취소 버튼 설정
+                builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                //라디오버튼 목록 설정
+                //첫번째 매개변수는 라디오버튼 항목을 문자열로 구성한 배열, 두번째는 초기에 선택되어지는 항목의 index
+                builder.setSingleChoiceItems(array, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //여러개의 라디오버튼들 중에서 선택된 인덱스를 저장
+                        selectIndex[0] = which;
+                    }
+                });
+
+                builder.show(); //다이얼로그 화면 출력
+
+
+            }
+        });
+
+
 
         btnCrt.setOnClickListener(new View.OnClickListener() {
             @Override

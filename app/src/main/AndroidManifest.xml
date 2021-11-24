@@ -41,6 +41,9 @@
         <receiver android:name=".ui.add.AlarmReceiver">
         </receiver>
 
+        <service android:name=".ForcedTerminationService"
+            android:stopWithTask="false"/>
+
     </application>
 
     <!-- 생체 인증 권한 -->

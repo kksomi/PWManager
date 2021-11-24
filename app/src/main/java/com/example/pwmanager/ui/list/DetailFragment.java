@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -32,6 +33,8 @@ public class DetailFragment extends Fragment {
     private String pw;
     private TextView dateText;
     private RadioButton pushOn, pushOff;
+    private ImageView pasteId;
+    private String pastedId;
     private int month, year;
 
     @Override
@@ -59,6 +62,7 @@ public class DetailFragment extends Fragment {
 
         TextView textView = (TextView) view.findViewById(R.id.view_pw);
 
+
         nameText.setEnabled(true);
         idText.setEnabled(true);
         urlText.setEnabled(true);
@@ -66,6 +70,7 @@ public class DetailFragment extends Fragment {
         memoText.setEnabled(true);
 //        dateText.setEnabled(true);
         pushText.setEnabled(true);
+
 
         //선택한 비밀번호 정보 불러오기
         viewModel.getSelectItem().observe(getViewLifecycleOwner(), item -> {
@@ -123,13 +128,50 @@ public class DetailFragment extends Fragment {
 //                dateText.setText(date);
                 pushText.setText(item.getPush());
 
+                pastedId = idText.getText().toString();
+
             }
         });
 
         //비밀번호 정보는 textView 클릭시 나타남
         textView.setOnClickListener(v -> pwText.setText(pw));
 
+//        //아이디 복사
+//        pasteId.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+//                    //클립보드 사용
+//                    ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(CLIPBOARD_SERVICE);
+//                    ClipData clipData = ClipData.newPlainText("ID", pastedId);
+//                    clipboardManager.setPrimaryClip(clipData);
+//
+//                    Toast.makeText(getContext(), "아이디가 복사되었습니다.", Toast.LENGTH_SHORT).show();
+//                }
+//
+//                return true;
+//            }
+//        });
+
+//        //비밀번호 복사
+//        pastePw.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+//                    //클립보드 사용
+//                    ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(CLIPBOARD_SERVICE);
+//                    ClipData clipData = ClipData.newPlainText("PW", pastedPw);
+//                    clipboardManager.setPrimaryClip(clipData);
+//
+//                    Toast.makeText(getContext(), "비밀번호가 복사되었습니다.", Toast.LENGTH_SHORT).show();
+//                }
+//
+//                return true;
+//            }
+//        });
+
         return view;
     }
+
 
 }

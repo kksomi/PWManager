@@ -8,6 +8,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -52,7 +53,8 @@ public class AddFragment extends Fragment {
     private TextView pushText;
     private Button btnPush;
 
-    private Button btnUrl;
+    private Button btnChoiceUrl;
+    private Button btnSearchUrl;
 
     private int pushYear = 0;
     private int pushMonth = 0;
@@ -78,7 +80,8 @@ public class AddFragment extends Fragment {
         pushText = root.findViewById(R.id.input_push);
         btnPush = root.findViewById(R.id.btn_selectPush);
         btnCrt = root.findViewById(R.id.btn_createPW);
-        btnUrl = root.findViewById(R.id.btn_searchUrl);
+        btnChoiceUrl = root.findViewById(R.id.btn_choicehUrl);
+        btnSearchUrl = root.findViewById(R.id.btn_searchUrl);
 
         notificationManager = (NotificationManager)getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
         alarmManager = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
@@ -151,8 +154,8 @@ public class AddFragment extends Fragment {
             }
         });
 
-        //검색 선택 버튼 클릭 이벤트
-        btnUrl.setOnClickListener(new View.OnClickListener() {
+        //선택 버튼 클릭 이벤트
+        btnChoiceUrl.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
@@ -193,6 +196,18 @@ public class AddFragment extends Fragment {
 
                 builder.show(); //다이얼로그 화면 출력
 
+
+            }
+
+        });
+
+        //검색 버튼 클릭 이벤트
+        btnSearchUrl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String searchString = nameText.getText().toString();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://search.naver.com/search.naver?query="+searchString));
+                startActivity(intent);
 
             }
         });

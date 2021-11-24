@@ -113,11 +113,19 @@
                         android:inputType="textUri" />
 
                     <Button
+                        android:id="@+id/btn_choicehUrl"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.2"
+                        android:text="선택"
+                        app:backgroundTint="#858585" />
+
+                    <Button
                         android:id="@+id/btn_searchUrl"
                         android:layout_width="0px"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="선택"
+                        android:layout_weight="1.2"
+                        android:text="검색"
                         app:backgroundTint="#858585" />
                 </LinearLayout>
 

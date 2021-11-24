@@ -21,6 +21,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import com.example.pwmanager.R;
+import com.example.pwmanager.ui.list.OnDialogListener;
 
 import java.lang.reflect.Field;
 import java.util.Random;
@@ -28,6 +29,7 @@ import java.util.Random;
 public class CreatePassword extends DialogFragment implements CompoundButton.OnCheckedChangeListener{
     OnMyDialogResult mDialogResult;
     private Fragment fragment;
+    private OnDialogListener listener;
     private TextView textPassword;
     private int targetStringLength;
     private String[] lengths = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11",
@@ -48,7 +50,7 @@ public class CreatePassword extends DialogFragment implements CompoundButton.OnC
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.create_password, container, false);
-        rnd = new Random();
+        rnd = new Random(System.currentTimeMillis());
 
         Button create = (Button) root.findViewById(R.id.pw_create);
         Button cancel = (Button) root.findViewById(R.id.cancel);

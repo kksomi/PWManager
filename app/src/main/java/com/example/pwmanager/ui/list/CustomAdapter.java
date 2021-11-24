@@ -127,6 +127,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onLeftClick(int position, RecyclerView.ViewHolder viewHolder) {
+
+
         //수정 버튼 클릭시 다이얼로그 생성
         CustomDialog dialog = new CustomDialog(context, position, items.get(position));
 

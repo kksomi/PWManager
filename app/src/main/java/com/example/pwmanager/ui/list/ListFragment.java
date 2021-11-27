@@ -12,7 +12,9 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pwmanager.R;
@@ -47,6 +49,10 @@ public class ListFragment extends Fragment {
 
         helper = new ItemTouchHelper(new ItemTouchHelperCallback(adapter));
         helper.attachToRecyclerView(recyclerView);
+
+        //선으로 나눠주기
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), new LinearLayoutManager(getContext()).getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
         search.addTextChangedListener(new TextWatcher() {
             @Override

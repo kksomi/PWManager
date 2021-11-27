@@ -106,11 +106,9 @@ public class CustomDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 pushText.setText(null);
-
-                Calendar calendar = Calendar.getInstance();
-                pushYear = calendar.get(Calendar.YEAR);
-                pushMonth = calendar.get(Calendar.MONTH) + 1;
-                pushDay = calendar.get(Calendar.DAY_OF_MONTH);
+                pushYear = 0;
+                pushMonth = 0;
+                pushDay = 0;
             }
         });
 

@@ -64,6 +64,8 @@ public class AlarmReceiver extends BroadcastReceiver {
         builder.setContentText("비밀번호를 변경해야하는 날입니다.");
         //알림창 아이콘
         builder.setSmallIcon(R.drawable.login);
+        //알림 중요도
+        builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
         //알림창 터치 시 삭제
         builder.setAutoCancel(true);
 

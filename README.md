@@ -1,5 +1,6 @@
 # PWManager
-PWManager
+- 개발환경 : Android Studio
+- 개발언어 : Java
 
 ## 1.	제목 : ‘지켜줄게’
 	
